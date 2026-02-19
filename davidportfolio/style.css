@@ -28,10 +28,35 @@ ul.breadcrumb li a:hover {
  padding: 0;
  box-sizing: border-box;
 }
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
 .container-slide{
   padding: 2px;
   background-color: maroon;
 }
+
 .slider-wrapper{
   position: relative;
   max-width: 50rem;
@@ -75,7 +100,7 @@ ul.breadcrumb li a:hover {
 }
 .slider-nav a:hover{
   opacity: 1;
-}
+} */
 body {
   background-color: rgb(255, 241, 216);
   margin-top: 0px;
