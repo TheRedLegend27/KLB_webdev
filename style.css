@@ -1,29 +1,34 @@
 @import url('https://fonts.googleapis.com');
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import url("bootstrap.css");
+
+
 /*Color Scheme*/
-ul.breadcrumb {
+.breadcrumb {
   padding: 10px 16px;
   list-style: none;
   background-color:rgb(166, 133, 133);
-}
-ul.breadcrumb li {
-  font-family:'Montserrat';
-  display: inline;
+  font-family:'Montserrat';  
   font-size: 18px;
 }
-ul.breadcrumb li+li:before {
-  font-family:'Montserrat';
-  padding: 8px;
+.breadcrumb li {
+  display: inline;
+}
+.breadcrumb li+li:before {
   color: black;
   content: "/\00a0";
 }
-ul.breadcrumb li a {
+.breadcrumb li a {
   color: #980081;
   text-decoration: none;
 }
-ul.breadcrumb li a:hover {
+.breadcrumb li a:hover {
   color: #ffffff;
   text-decoration: underline;
 }
+
+
+
 body {
   background-color: rgb(137, 0, 0);
 }
@@ -95,6 +100,7 @@ body {
   top: 0;
   width: 100%;
 }
+
 /*Section colors - add more eventually*/
 h1.title{
   background-color: rgba(130, 1, 1, .50);
@@ -129,13 +135,15 @@ div.lethalbanner{
   width: auto;
   height: auto;
 }
+
 /*Typography*/
 p.impact {
   font-family: 'Franklin Gothic Medium';
   line-height: 1.2;
   text-align: justify;
   width: auto;
-} /*use type t for general text*/
+} 
+/*use type t for general text*/
 p.arial {
   font-family: Helvetica;
   line-height: 0.9;
@@ -183,11 +191,13 @@ div.fiftyPx {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+/*
 hr.line{
   height: 2px;
   width: 50%;
   margin: 0 auto;
-}
+}*/
 div.Nav{
   margin-top: 0px;
   margin-left: 0px;
@@ -301,14 +311,12 @@ div.end-box {
   margin: 20px;
   background: #fff;
 }
-
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
 }
-
 .shotbox {
     width: 100%;
     max-width: 300px;
