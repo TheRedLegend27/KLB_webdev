@@ -19,5 +19,9 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "sass": "^1.98.0"
   }
 }
