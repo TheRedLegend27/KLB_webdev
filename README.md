@@ -1,13 +1,25 @@
-Michael: Worked on making the monsters js cards. 
+Michael: Worked on making the monsters js cards. Added the function of storing if the user clsoes the popup, it does not appear on refresh.
 
 David: (add when done)
 
 AI: AI was used to create the monster descriptions in monsters.json. AI helped explain that browsers block fetch for security stuff and we needed to use Live server in order to test and run.
 
-DOM manipulation (add, remove, and modify at least 1 element) - Not Done
+Requirements:
 
-At least 2 event listeners (click, submit, hover, etc.) - Not Done
+DOM manipulation (add, remove, and modify at least 1 element) - Done
 
-Fetch and use data from a JSON file - Done / Michael
+At least 2 event listeners (click, submit, hover, etc.) - Done
 
-Use variables, functions, and loops appropriately (at least 2) - Not Done
+Use variables, functions, and loops appropriately (at least 2) - Done
+
+Fetch and use data from a JSON file - Done
+
+Team 2 Requirements:
+
+Dynamically update text content (quotes, headings, etc.) - Not Done
+
+Toggle visibility of grouped content - Not Done
+
+Modify text based on user input - Not Done
+
+Implement a collapsible text block - Not Done

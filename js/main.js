@@ -26,3 +26,14 @@ dialog.querySelector("button").addEventListener("click", () => {
   localStorage.setItem("dialogDismissed", "true");
   dialog.removeAttribute("open");
 });
+
+// highlight monster card on hover
+document.querySelector("#Monsters").addEventListener("mouseover", (e) => {
+  const card = e.target.closest(".card");
+  if (card) card.style.outline = "2px solid white";
+});
+
+document.querySelector("#Monsters").addEventListener("mouseout", (e) => {
+  const card = e.target.closest(".card");
+  if (card) card.style.outline = "";
+});
