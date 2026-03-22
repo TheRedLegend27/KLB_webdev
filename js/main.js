@@ -1,6 +1,8 @@
 async function loadMonsters() {
   const monsters = await fetch("load/monsters.json").then(r => r.json());
   const container = document.querySelector("#Monsters");
+
+  // inserts monster cards pulled from monsters.json
   monsters.forEach(m => {
     container.insertAdjacentHTML("beforeend", `
       <div class="card bg-dark text-white mb-2">
@@ -10,6 +12,17 @@ async function loadMonsters() {
           <p class="card-text mt-2">${m.description}</p>
         </div>
       </div>`);
-  });
-}
+  });}
 loadMonsters();
+
+// hide popup dialog if user already dismissed it
+const dialog = document.querySelector("dialog");
+if (localStorage.getItem("dialogDismissed")) {
+  dialog.removeAttribute("open");
+}
+
+// saves dismissal so it stays closed on relaunch
+dialog.querySelector("button").addEventListener("click", () => {
+  localStorage.setItem("dialogDismissed", "true");
+  dialog.removeAttribute("open");
+});
