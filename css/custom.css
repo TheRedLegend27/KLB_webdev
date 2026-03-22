@@ -11887,16 +11887,16 @@ textarea.form-control-lg {
   text-decoration: underline;
 }
 
+/* Grid Layouts
 .grid-container-introduction {
   display: grid;
   grid-template-columns: 1fr;
   margin: 10px 75px;
   gap: 1em;
-}
-
+}*/
 .item-introduction {
-  height: 150px;
-  padding: 0.75rem;
+  height: 300px;
+  padding: 2rem;
   background-color: rgb(138, 36, 36);
   color: black;
   text-align: center;
@@ -11932,7 +11932,7 @@ textarea.form-control-lg {
 }
 
 .item-monsters {
-  height: 200px;
+  min-height: 200px;
   padding: 0.75rem;
   background-color: rgb(178, 49, 23);
   color: black;
@@ -11966,19 +11966,18 @@ h1.title, .title.h1 {
   height: auto;
 }
 
-h2, .h2 {
+/*h2 {
   background-color: rgb(192, 192, 192);
   text-align: center;
   letter-spacing: 2px;
-  font-family: "Montserrat";
-}
-
+  font-family: 'Montserrat';
+}*/
 h3, .h3 {
-  padding: 0.5rem;
+  padding: 0.75rem;
   background-color: rgb(157, 107, 107);
   text-align: left;
   width: 400px;
-  height: 25px;
+  height: 50px;
   letter-spacing: 3px;
   font-family: "Montserrat";
 }

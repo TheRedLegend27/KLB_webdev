@@ -1,0 +1,32 @@
+[
+    {
+    "name": "Bracken",
+    "danger": "High",
+    "description": "A tall humanoid creature that stalks you from behind. Looking at it directly causes it to retreat — but stare too long and it will snap your neck."
+  },
+  {
+    "name": "Forest Keeper",
+    "danger": "Extreme",
+    "description": "A massive giant that roams outdoor areas. It will pick you up and eat you. Running is your only option."
+  },
+  {
+    "name": "Hoarding Bug",
+    "danger": "Medium",
+    "description": "Collects scrap and guards it fiercely. Harmless if you leave its loot alone — but provoke it and it swarms."
+  },
+  {
+    "name": "Coil-Head",
+    "danger": "High",
+    "description": "A spring-necked mannequin that charges at full speed — but only when you look away. Never break eye contact."
+  },
+  {
+    "name": "Jester",
+    "danger": "Extreme",
+    "description": "Winds up slowly while you hear its music box tune. Once it pops, it chases and kills everyone instantly. Get out of the building."
+  },
+  {
+    "name": "David Born",
+    "danger": "Super Duper Extreme",
+    "description": "He is too attractive."
+  }
+]
