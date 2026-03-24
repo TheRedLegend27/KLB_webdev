@@ -1,4 +1,4 @@
-Michael: Worked on making the monsters js cards. Added the function of storing if the user clsoes the popup, it does not appear on refresh.
+Michael: Worked on making the monsters js cards. Added the function of storing if the user clsoes the popup, it does not appear on refresh. Added dynamically changing text that appears above the nav bar.
 
 David: (add when done)
 
