@@ -16,10 +16,13 @@ Fetch and use data from a JSON file - Done
 
 Team 2 Requirements:
 
-Dynamically update text content (quotes, headings, etc.) - Not Done
+Dynamically update text content (quotes, headings, etc.) - Done
 
-Toggle visibility of grouped content - Not Done
+Toggle visibility of grouped content - Done
 
 Modify text based on user input - Not Done
 
 Implement a collapsible text block - Not Done
+
+
+Sources: to be added
