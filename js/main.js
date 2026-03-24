@@ -27,6 +27,17 @@ dialog.querySelector("button").addEventListener("click", () => {
   dialog.removeAttribute("open");
 });
 
+// roating tags
+const tags = [
+  "The Company is Watching",
+  "The Company Appreciates Your Sacrifice.",
+  "You are a Valued Employee of the Comapny",
+];
+let i = 0;
+const taglineEl = document.querySelector("#tagline");
+taglineEl.textContent = tags[i];
+setInterval(() => taglineEl.textContent = tags[i = (i + 1) % tags.length], 5000);
+
 // highlight monster card on hover
 document.querySelector("#Monsters").addEventListener("mouseover", (e) => {
   const card = e.target.closest(".card");
