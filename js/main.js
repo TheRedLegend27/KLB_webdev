@@ -1,6 +1,6 @@
 async function loadMonsters() {
   const monsters = await fetch("load/monsters.json").then(r => r.json());
-  const container = document.querySelector("#Monsters");
+  const container = document.querySelector("#monster-cards");
 
   // inserts monster cards pulled from monsters.json
   monsters.forEach(m => {
@@ -37,6 +37,13 @@ let i = 0;
 const taglineEl = document.querySelector("#tagline");
 taglineEl.textContent = tags[i];
 setInterval(() => taglineEl.textContent = tags[i = (i + 1) % tags.length], 5000);
+
+// toggle visibility of monster cards
+const toggleBtn = document.querySelector("#toggle-monsters-btn");
+const monsterCards = document.querySelector("#monster-cards");
+toggleBtn.addEventListener("click", () => {
+  toggleBtn.textContent = monsterCards.classList.toggle("d-none") ? "Show" : "Hide";
+});
 
 // highlight monster card on hover
 document.querySelector("#Monsters").addEventListener("mouseover", (e) => {
