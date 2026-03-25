@@ -25,4 +25,14 @@ Modify text based on user input - Done
 Implement a collapsible text block - Done
 
 
-Sources: to be added
+Sources:
+https://www.w3schools.com/jsref/api_fetch.asp
+https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp
+https://www.w3schools.com/jsref/prop_win_localstorage.asp
+https://www.geeksforgeeks.org/javascript/javascript-addeventlistener-with-examples/
+https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+https://www.w3schools.com/jsref/met_win_setinterval.asp
+https://www.w3schools.com/jsref/prop_element_classlist.asp
+https://www.w3schools.com/jsref/dom_obj_style.asp
+https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector#:~:text=The%20Document%20method%20querySelector(),will%20never%20return%20any%20elements.
+
