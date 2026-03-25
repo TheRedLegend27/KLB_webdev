@@ -1,5 +1,5 @@
 async function loadMonsters() {
-  const monsters = await fetch("load/monsters.json").then(r => r.json());
+  const monsters = await fetch("monsters.json").then(r => r.json());
   const container = document.querySelector("#monster-cards");
 
   // inserts monster cards pulled from monsters.json
