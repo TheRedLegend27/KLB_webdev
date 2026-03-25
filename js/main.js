@@ -55,3 +55,17 @@ document.querySelector("#Monsters").addEventListener("mouseout", (e) => {
   const card = e.target.closest(".card");
   if (card) card.style.outline = "";
 });
+
+// Text change on button click
+document.getElementById("blindBtn").onclick = blind_text;
+document.getElementById("sightBtn").onclick = sight_text;
+
+function blind_text() {
+  document.getElementById("Blind").style.fontSize = "30px";
+  document.getElementById("Blind").style.height = "1300px";
+}
+
+function sight_text() {
+  document.getElementById("Blind").style.fontSize = "1rem";
+  document.getElementById("Blind").style.height = "650px";
+}

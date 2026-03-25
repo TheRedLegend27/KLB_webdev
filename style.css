@@ -27,7 +27,7 @@
   text-decoration: underline;
 }
 body {
-  background-color: rgb(137, 0, 0);
+  background-color: rgb(255, 255, 255);
 }
 .grid-container-introduction{
   display: grid;

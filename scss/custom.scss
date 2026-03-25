@@ -134,6 +134,15 @@ p.impact {
   font-family: 'Franklin Gothic Medium';
   line-height: 1.2;
   text-align: justify;
+  transition: font-size 0.3s;
+  font-size: 16px;
+}
+#Blind{
+  font-family: 'Franklin Gothic Medium';
+  line-height: 1.2;
+  text-align: justify;
+  transition: font-size 0.3s;
+  font-size: 16px; 
 }
 p.arial {
   font-family: Helvetica;
@@ -144,7 +153,7 @@ p.arial {
 // Div classes
 div.arial {
   width: auto;
-  background-color: rgb(181, 94, 94);
+  background-color: rgb(255, 255, 255);
   color: rgb(255, 255, 255);
   line-height: 20px;
   padding: 10px;
