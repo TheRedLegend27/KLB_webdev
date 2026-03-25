@@ -69,3 +69,19 @@ function sight_text() {
   document.getElementById("Blind").style.fontSize = "1rem";
   document.getElementById("Blind").style.height = "650px";
 }
+
+//Moons drop down
+var coll = document.getElementsByClassName("collapsible");
+var j;
+
+for (j = 0; j < coll.length; j++) {
+  coll[j].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var itemmoons = this.nextElementSibling;
+    if (itemmoons.style.display === "block") {
+      itemmoons.style.display = "none";
+    } else {
+      itemmoons.style.display = "block";
+    }
+  });
+}
