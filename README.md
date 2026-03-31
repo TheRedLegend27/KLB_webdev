@@ -12,4 +12,4 @@ Michael:
 
 David:
 
-AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc
+AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc. AI was used to create the text about the webpage/show in about.html.
