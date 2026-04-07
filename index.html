@@ -18,99 +18,57 @@
 
 <main>
 
+<!-- ABOUT PAGE -->
 <section id="about" class="page active">
   <h2>The World of Nano</h2>
-
   <p class="intro">
     In a world not unlike our own—just softer, warmer, and far more chaotic—tiny terriers known as <strong>Nanos</strong> quietly rule from the shadows.
   </p>
-
   <hr>
-
   <h3>🐾 Origins</h3>
-  <p>
-    No one knows exactly when the first Nano appeared. Some say they were once ordinary companions,
-    transformed by an ancient force known only as <strong>The Treat</strong>. Others believe they have
-    always existed—watching, waiting, and occasionally napping.
-  </p>
-  <p>
-    What is known is this: wherever there are treats, there is power—and Nanos have mastered both.
-  </p>
-
+  <p>No one knows exactly when the first Nano appeared...</p>
   <h3>⚔️ The Great Treat Conflict</h3>
-  <p>
-    As more Nanos awakened to their abilities, rivalries began to form. The laid-back sleepers,
-    the tactical thinkers, the relentless leaders—all competing for control of the infinite Treat supply.
-  </p>
-  <p>
-    This struggle became known as the <strong>Great Treat Conflict</strong>, a never-ending contest of
-    strategy, patience, and perfectly timed naps.
-  </p>
-
+  <p>As more Nanos awakened to their abilities, rivalries began to form...</p>
   <h3>🧠 Your Role</h3>
-  <p>
-    You are not just an observer—you are a <strong>Handler</strong>.
-  </p>
-  <p>
-    Handlers assemble teams of Nanos, guiding them through battles by managing Treat resources,
-    positioning powerful Characters, and triggering clever abilities at just the right moment.
-  </p>
-  <p>
-    Every decision matters. Every Nano has a purpose.
-  </p>
-
+  <p>You are not just an observer—you are a <strong>Handler</strong>.</p>
   <h3>🎴 The Cards</h3>
-  <p>
-    Each card represents a unique Nano, complete with its own personality, strengths, and quirks.
-    Some defend. Some attack. Others bend the rules entirely.
-  </p>
-  <p>
-    Build your deck wisely—synergy is everything.
-  </p>
-
+  <p>Each card represents a unique Nano, complete with its own personality, strengths, and quirks.</p>
   <h3>🌙 A Game of Strategy… and Vibes</h3>
-  <p>
-    Nano Card Game blends thoughtful strategy with a playful, charming world.
-    One moment you're calculating your next move—the next, you're being outplayed by a terrier
-    who refuses to wake up.
-  </p>
-
-  <blockquote>
-    “Power isn’t about how hard you fight… it’s about when you choose to nap.”
-  </blockquote>
-
-  <p class="closing">
-    The Nanos are waiting.<br>
-    Build your deck. Master the Treats. And prove you have what it takes to lead them.
-  </p>
+  <blockquote>“Power isn’t about how hard you fight… it’s about when you choose to nap.”</blockquote>
+  <p class="closing">The Nanos are waiting. Build your deck. Master the Treats.</p>
 </section>
 
-<!-- CARDS -->
+<!-- CARDS PAGE -->
 <section id="cards" class="page">
   <h2>All Cards</h2>
   <div id="card-container"></div>
 </section>
 
-<!-- DECK BUILDER -->
+<!-- DECK BUILDER PAGE -->
 <section id="deck" class="page">
-  <h2>Your Deck</h2>
-  <p>Click cards to add/remove them.</p>
-  <div id="deck-container"></div>
-</section>
+  <h2>Deck Builder</h2>
+  <p>Click cards to add/remove them. Max deck size: 10</p>
 
-</main>
+  <div id="deck-builder">
+    <div id="your-deck">
+      <h3>Your Deck (<span id="deck-count">0</span>/10)</h3>
+      <div id="deck-container"></div>
+    </div>
+
+    <div id="available-cards">
+      <h3>Available Cards</h3>
+      <div id="available-container"></div>
+    </div>
+  </div>
+</section>
 
 <!-- MODAL -->
 <div id="card-modal" class="modal hidden">
   <div class="modal-content flip-card">
     <div class="flip-inner">
-
-      <!-- FRONT -->
       <div class="flip-front">
         <img id="modal-image" src="">
       </div>
-
-      <!-- BACK -->
       <div class="flip-back">
         <span id="close-modal">&times;</span>
         <h3 id="modal-name"></h3>
@@ -121,7 +79,6 @@
         <p id="modal-flavor" class="flavor"></p>
         <p id="modal-details"></p>
       </div>
-
     </div>
   </div>
 </div>
