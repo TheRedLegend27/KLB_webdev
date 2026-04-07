@@ -6,8 +6,15 @@ const availableContainer = document.getElementById("available-container");
 const deckContainer = document.getElementById("deck-container");
 const deckCount = document.getElementById("deck-count");
 
+const openPackBtn = document.getElementById("open-pack-btn");
+const cardPack = document.getElementById("card-pack");
+const revealedCardSection = document.getElementById("revealed-card");
+const revealedCardContainer = document.getElementById("revealed-card-container");
+const addToDeckBtn = document.getElementById("add-to-deck-btn");
+
 let allCards = [];
 let deck = [];
+let lastRevealedCard = null;
 const MAX_DECK_SIZE = 10;
 
 // Load cards
@@ -71,13 +78,13 @@ window.onclick = e => { if (e.target === modal) modal.classList.add("hidden"); }
 function toggleDeck(card) {
   const index = deck.findIndex(c => c.id === card.id);
   if (index > -1) {
-    deck.splice(index, 1); // remove
+    deck.splice(index, 1);
   } else {
     if(deck.length >= MAX_DECK_SIZE) {
       alert("Deck is full!");
       return;
     }
-    deck.push(card); // add
+    deck.push(card);
   }
   renderDeckBuilder();
 }
@@ -131,3 +138,50 @@ function showPage(id) {
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   document.getElementById(id).classList.add("active");
 }
+
+// ------------------ PACK OPENING ------------------
+openPackBtn.onclick = () => {
+  if (allCards.length === 0) return;
+
+  // Shake animation
+  cardPack.classList.add("shake");
+  setTimeout(() => {
+    cardPack.classList.remove("shake");
+
+    // Pick random card
+    const randomIndex = Math.floor(Math.random() * allCards.length);
+    const card = allCards[randomIndex];
+    lastRevealedCard = card;
+
+    // Show card
+    revealedCardContainer.innerHTML = "";
+    const div = document.createElement("div");
+    div.classList.add("deck-card");
+
+    const img = document.createElement("img");
+    img.src = "nano-data/" + card.image;
+
+    const name = document.createElement("p");
+    name.textContent = card.name;
+
+    div.appendChild(img);
+    div.appendChild(name);
+    revealedCardContainer.appendChild(div);
+
+    revealedCardSection.classList.remove("hidden");
+  }, 500);
+};
+
+// Add revealed card to deck
+addToDeckBtn.onclick = () => {
+  if (lastRevealedCard) {
+    if (deck.length >= MAX_DECK_SIZE) {
+      alert("Deck is full!");
+      return;
+    }
+    deck.push(lastRevealedCard);
+    renderDeckBuilder();
+    alert(`${lastRevealedCard.name} added to your deck!`);
+    revealedCardSection.classList.add("hidden");
+  }
+};

@@ -13,6 +13,7 @@
     <button onclick="showPage('about')">About</button>
     <button onclick="showPage('cards')">Cards</button>
     <button onclick="showPage('deck')">Deck Builder</button>
+    <button onclick="showPage('pack')">Card Pack</button>
   </nav>
 </header>
 
@@ -59,6 +60,23 @@
       <h3>Available Cards</h3>
       <div id="available-container"></div>
     </div>
+  </div>
+</section>
+
+<!-- PACK OPENING PAGE -->
+<section id="pack" class="page">
+  <h2>Open a Card Pack</h2>
+  <p>Click the pack to reveal a random Nano card!</p>
+  
+  <div id="pack-container">
+    <img id="card-pack" src="nano-data/pack.png" alt="Card Pack">
+    <button id="open-pack-btn">Open Pack</button>
+  </div>
+
+  <div id="revealed-card" class="hidden">
+    <h3>You got:</h3>
+    <div class="deck-card" id="revealed-card-container"></div>
+    <button id="add-to-deck-btn">Add to Deck</button>
   </div>
 </section>
 
