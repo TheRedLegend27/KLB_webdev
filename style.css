@@ -12,6 +12,33 @@ header {
   background: linear-gradient(90deg, #4a4aff, #7a7aff);
 }
 
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #4a4aff, #7a7aff);
+  margin-top: 40px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+footer button:hover {
+  background: white;
+  color: black;
+}
+
 /* NAV */
 nav button {
   margin: 5px;
