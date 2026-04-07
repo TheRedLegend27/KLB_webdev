@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/custom.css">
+  <script defer src="js/bootstrap.bundle.min.js"></script>
+  <title>Recipe</title>
+</head>
+
+<body class="bg-danger">
+
+<div class="d-flex align-items-center">
+  <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
+  <span class="h1 mb-0"><b>Company Secrets</b></span>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html#Recipes">RECIPES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="about.html">ABOUT</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-4">
+  <a href="index.html">Back to Home</a>
+  <div id="recipe-detail"></div>
+</div>
+
+<script> //Pulling json data for the recipe
+  const recipe = JSON.parse(localStorage.getItem('selectedRecipe'));
+  const detail = document.getElementById('recipe-detail');
+
+  if (!recipe) {
+    detail.innerHTML = '<p>No recipe selected. <a href="index.html">Go back</a></p>';
+  } else {
+    detail.innerHTML = `
+      <h1>${recipe.name}</h1>
+      <div>${recipe.images.map(img => `<img src="dataset/images/${img}" style="height:160px;">`).join('')}</div>
+      <p><strong>Category:</strong> ${recipe.category}</p>
+      <p><strong>Cuisine:</strong> ${recipe.cuisine}</p>
+      <p><strong>Season:</strong> ${recipe.season}</p>
+      <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
+      <p><strong>Prep Time:</strong> ${recipe.prep_time}</p>
+      <p><strong>Dietary:</strong> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>
+      <h2>Ingredients</h2>
+      <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+      <h2>Steps</h2>
+      <ol>${recipe.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+    `;
+  }
+</script>
+</body>
+</html>
