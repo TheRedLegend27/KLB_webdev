@@ -8,7 +8,7 @@ Recipe Sharing (15)
 Animations for Recipe Steps (10)
 
 
-Michael:
+Michael: Worked on initial structure of page. Added all of the dataset linking code. Added text boxes for the recipes page based on what I made on my portfolio site
 
 David:
 
