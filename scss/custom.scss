@@ -288,3 +288,40 @@ div.end-box {
   margin: 20px auto;
   background: black;
 }
+// Recipe page
+.textbox {
+  background-color: white;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  h3 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+  }
+}
+
+.boxes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recipe-header {
+  margin-bottom: 10px;
+
+  img {
+    height: 160px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+}

@@ -35,31 +35,46 @@
 
 <div class="container py-4">
   <a href="index.html">Back to Home</a>
-  <div id="recipe-detail"></div>
+  <div id="recipe-header" class="recipe-header"></div>
+
+  <div class="boxes-grid">
+    <div class="textbox" id="box-details">
+      <h3>Recipe Information</h3>
+      <div id="details-content"></div>
+    </div>
+    <div class="textbox" id="box-ingredients">
+      <h3>Ingredients</h3>
+      <ul id="ingredients-content"></ul>
+    </div>
+    <div class="textbox" id="box-steps">
+      <h3>Steps</h3>
+      <ol id="steps-content"></ol>
+    </div>
+  </div>
 </div>
 
-<script> //Pulling json data for the recipe
+<script>
   const recipe = JSON.parse(localStorage.getItem('selectedRecipe'));
-  const detail = document.getElementById('recipe-detail');
 
-  if (!recipe) {
-    detail.innerHTML = '<p>No recipe selected. <a href="index.html">Go back</a></p>';
-  } else {
-    detail.innerHTML = `
-      <h1>${recipe.name}</h1>
-      <div>${recipe.images.map(img => `<img src="dataset/images/${img}" style="height:160px;">`).join('')}</div>
-      <p><strong>Category:</strong> ${recipe.category}</p>
-      <p><strong>Cuisine:</strong> ${recipe.cuisine}</p>
-      <p><strong>Season:</strong> ${recipe.season}</p>
-      <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
-      <p><strong>Prep Time:</strong> ${recipe.prep_time}</p>
-      <p><strong>Dietary:</strong> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>
-      <h2>Ingredients</h2>
-      <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
-      <h2>Steps</h2>
-      <ol>${recipe.steps.map(s => `<li>${s}</li>`).join('')}</ol>
-    `;
-  }
+  document.getElementById('recipe-header').innerHTML = `
+    <h1>${recipe.name}</h1>
+    <div class="d-flex gap-2 flex-wrap">${recipe.images.map(img => `<img src="dataset/images/${img}" class="recipe-header">`).join('')}</div>
+  `;
+
+  document.getElementById('details-content').innerHTML = `
+    <p><strong>Category:</strong> ${recipe.category}</p>
+    <p><strong>Cuisine:</strong> ${recipe.cuisine}</p>
+    <p><strong>Season:</strong> ${recipe.season}</p>
+    <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
+    <p><strong>Prep Time:</strong> ${recipe.prep_time}</p>
+    <p><strong>Dietary:</strong> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>
+  `;
+
+  document.getElementById('ingredients-content').innerHTML =
+    recipe.ingredients.map(i => `<li>${i}</li>`).join('');
+
+  document.getElementById('steps-content').innerHTML =
+    recipe.steps.map(s => `<li>${s}</li>`).join('');
 </script>
 </body>
 </html>
