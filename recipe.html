@@ -62,12 +62,12 @@
   `;
 
   document.getElementById('details-content').innerHTML = `
-    <p><strong>Category:</strong> ${recipe.category}</p>
-    <p><strong>Cuisine:</strong> ${recipe.cuisine}</p>
-    <p><strong>Season:</strong> ${recipe.season}</p>
-    <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
-    <p><strong>Prep Time:</strong> ${recipe.prep_time}</p>
-    <p><strong>Dietary:</strong> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>
+    <p><b>Category:</b> ${recipe.category}</p>
+    <p><b>Cuisine:</b> ${recipe.cuisine}</p>
+    <p><b>Season:</b> ${recipe.season}</p>
+    <p><b>Difficulty:</b> ${recipe.difficulty}</p>
+    <p><b>Prep Time:</b> ${recipe.prep_time}</p>
+    <p><b>Dietary:</b> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>
   `;
 
   document.getElementById('ingredients-content').innerHTML =
