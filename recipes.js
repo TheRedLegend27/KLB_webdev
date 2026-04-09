@@ -1,5 +1,5 @@
 async function loadRecipes() {
-  const res = await fetch('dataset/recipes/beverages_recipes.json'); //change with recipe json we want to pull
+  const res = await fetch('dataset/recipes/all_recipes.json'); //change with recipe json we want to pull
   const recipes = await res.json();
   const grid = document.getElementById('recipe-grid');
   grid.innerHTML = '';
