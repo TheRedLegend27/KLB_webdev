@@ -13,3 +13,25 @@ Michael: Worked on initial structure of page. Added all of the dataset linking c
 David:
 
 AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc. AI was used to create the text about the webpage/show in about.html.
+
+Sources:
+https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+https://developer.mozilla.org/en-US/docs/Web/API/Response/json
+
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+
+https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
+
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+
