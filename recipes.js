@@ -1,9 +1,8 @@
-async function loadRecipes() {
-  const res = await fetch('dataset/recipes/all_recipes.json'); //change with recipe json we want to pull
-  const recipes = await res.json();
+let allRecipes = [];
+
+function renderRecipes(recipes) {
   const grid = document.getElementById('recipe-grid');
   grid.innerHTML = '';
-
   recipes.forEach(recipe => {
     const col = document.createElement('div');
     col.className = 'col-6 col-md-3 mb-4';
@@ -21,4 +20,16 @@ async function loadRecipes() {
     grid.appendChild(col);
   });
 }
+
+async function loadRecipes() {
+  const res = await fetch('dataset/recipes/all_recipes.json');
+  allRecipes = await res.json();
+  renderRecipes(allRecipes);
+
+  document.getElementById('search-input').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    renderRecipes(allRecipes.filter(r => r.name.toLowerCase().includes(query)));
+  });
+}
+
 document.addEventListener('DOMContentLoaded', loadRecipes);
