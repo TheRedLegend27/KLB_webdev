@@ -28,6 +28,11 @@ function displayRecipes() {
     grid.appendChild(col); // adds the finished card
   });
 
+  if (filteredRecipes.length === 0) { // check for if search result is empty
+    grid.innerHTML = '<p class="text-center w-100 mt-4"><b>No Results</b></p>';
+    return;
+  }
+
   if (limiter < filteredRecipes.length) { // only show more if there are hidden recipes remaining
     const btnCol = document.createElement('div');
     btnCol.className = 'col-12 text-center mt-2 mb-4';
