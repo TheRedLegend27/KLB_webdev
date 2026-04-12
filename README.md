@@ -8,7 +8,7 @@ Recipe Sharing (15)
 Animations for Recipe Steps (10)
 
 
-Michael: Worked on initial structure of page. Added all of the dataset linking code. Added text boxes for the recipes page based on what I made on my portfolio site. Added searching function. Added limiting function to not display all recipes at once
+Michael: Worked on initial structure of page. Added all of the dataset linking code. Added text boxes for the recipes page based on what I made on my portfolio site. Added searching function along with search check. Added limiting function to not display all recipes at once
 
 David:
 
