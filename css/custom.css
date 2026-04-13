@@ -12201,4 +12201,12 @@ div.end-box {
   object-fit: cover;
 }
 
+#recipe-grid .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#recipe-grid .card:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
 /*# sourceMappingURL=custom.css.map */
