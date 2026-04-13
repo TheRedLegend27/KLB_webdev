@@ -78,7 +78,7 @@
     <p><b>Season:</b> ${recipe.season}</p>
     <p><b>Difficulty:</b> ${recipe.difficulty}</p>
     <p><b>Prep Time:</b> ${recipe.prep_time}</p>
-    <p><b>Dietary:</b> ${recipe.dietary && recipe.dietary.length ? recipe.dietary.join(', ') : 'N/A'}</p>
+    <p><b>Dietary:</b> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>
   `;
 
   document.getElementById('ingredients-content').innerHTML =
