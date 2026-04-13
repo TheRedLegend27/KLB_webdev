@@ -17,8 +17,8 @@ function displayRecipes() {
     col.innerHTML = `
       <div class="card h-100" style="cursor:pointer;">
         <img src="dataset/images/${recipe.images[0]}" class="card-img-top" style="height:180px;object-fit:cover;"> <!-- first image from the recipe's image list -->
-        <div class="card-body">
-          <h6 class="card-title">${recipe.name}</h6> <!-- display the recipe name -->
+        <div class="card-body bg-dark text-white">
+          <h6 class="card-title fw-bold text-center">${recipe.name}</h6> <!-- display the recipe name -->
         </div>
       </div>`;
     col.addEventListener('click', () => { // clicking a card saves the recipe and navigates to the detail page
