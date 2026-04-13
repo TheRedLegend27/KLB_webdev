@@ -12209,4 +12209,10 @@ div.end-box {
   transform: translateY(-6px) scale(1.03);
 }
 
+.recipe-img {
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=custom.css.map */
