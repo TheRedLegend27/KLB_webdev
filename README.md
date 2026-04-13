@@ -5,6 +5,10 @@ Advanced Dynamic Search (10)
 Theme Switcher (10)
 Dynamic Recipe Filter & Sorting (10)
 Recipe Sharing (15)
+Submission Form (10)
+Animation for Recipe Actions (10)
+Seasonal Recipes (5)
+Total: (70)
 
 
 Michael: Worked on initial structure of page. Added all of the dataset linking code. Added text boxes for the recipes page based on what I made on my portfolio site. Added searching function along with search check. Added limiting function to not display all recipes at once
