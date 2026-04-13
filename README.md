@@ -1,11 +1,10 @@
 Final Recipe Website
 
-Optional Features Selected:
+Optional Features Selected: (We need 70 points total at least)
 Advanced Dynamic Search (10)
 Theme Switcher (10)
 Dynamic Recipe Filter & Sorting (10)
 Recipe Sharing (15)
-Animations for Recipe Steps (10)
 
 
 Michael: Worked on initial structure of page. Added all of the dataset linking code. Added text boxes for the recipes page based on what I made on my portfolio site. Added searching function along with search check. Added limiting function to not display all recipes at once
@@ -15,6 +14,7 @@ David:
 AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc. AI was used to create the text about the webpage/show in about.html.
 
 Sources:
+
 https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
