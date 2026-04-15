@@ -47,6 +47,7 @@
 <button type="button" class="btn btn-secondary" onclick="copyLink()">Copy Link</button>
 <button type="button" class="btn btn-secondary" onclick="shareOnTwitter()">Share on X</button>
 <button type="button" class="btn btn-secondary" onclick="shareOnFacebook()">Share on Facebook</button>
+<!-- <button type="button" class="btn btn-secondary" onclick="shareOnInsta()">Share on Instagram</button> -->
   
 <!-- Recipe name -->
   <h1 id="recipe-title" class="text-center fw-bold my-4 text-white"></h1>
@@ -93,6 +94,14 @@
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
     window.open(facebookUrl, '_blank');
   }
+
+  //Function for sharing to Instagram
+  //function shareOnInsta() {
+   // const url = encodeURIComponent(window.location.href);
+    //const insta = ();
+    //window.open(insta, '_blank');
+  //}
+  
 
   //Function for copying link
   async function copyLink() {
