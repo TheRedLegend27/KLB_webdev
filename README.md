@@ -41,3 +41,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
 
 https://stackoverflow.com/questions/74726140/how-to-share-url-and-copy-to-clipboard-with-url-change
 
+https://medium.com/@olurebidavid/creating-social-media-share-buttons-94abb1c6a330
+
+
+
