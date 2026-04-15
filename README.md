@@ -39,3 +39,5 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 
 https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
 
+https://stackoverflow.com/questions/74726140/how-to-share-url-and-copy-to-clipboard-with-url-change
+

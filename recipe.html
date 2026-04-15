@@ -44,6 +44,7 @@
   <a href="index.html">Back to Home</a>
 
 <button type="button" class="btn btn-secondary">Favorite</button>
+<button type="button" class="btn btn-secondary" onclick="copyLink()">Copy Link</button>
   
 <!-- Recipe name -->
   <h1 id="recipe-title" class="text-center fw-bold my-4 text-white"></h1>
@@ -74,7 +75,14 @@
 </div>
 
 <!-- Gets selected recipe -->
+
+<!-- Function for sharing link -->
 <script>
+  async function copyLink() {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Link Copied!");
+  }
+
   function renderRecipe(recipe) {
 // Gets name
     document.getElementById('recipe-title').textContent = recipe.name;
