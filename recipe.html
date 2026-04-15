@@ -75,36 +75,51 @@
 
 <!-- Gets selected recipe -->
 <script>
-  const recipe = JSON.parse(localStorage.getItem('selectedRecipe'));
-
+  function renderRecipe(recipe) {
 // Gets name
-  document.getElementById('recipe-title').textContent = recipe.name;
+    document.getElementById('recipe-title').textContent = recipe.name;
 
 //Gets images
-  document.getElementById('images-content').innerHTML =
-    recipe.images.map(img => `<img src="dataset/images/${img}" class="recipe-img">`).join('');
+    document.getElementById('images-content').innerHTML =
+      recipe.images.map(img => `<img src="dataset/images/${img}" class="recipe-img">`).join('');
 
 //Gets recipe information
-  document.getElementById('details-content').innerHTML = `
-    <p><b>Category:</b> ${recipe.category}</p>
-    <p><b>Cuisine:</b> ${recipe.cuisine}</p>
-    <p><b>Season:</b> ${recipe.season}</p>
-    <p><b>Difficulty:</b> ${recipe.difficulty}</p>
-    <p><b>Prep Time:</b> ${recipe.prep_time}</p>
-    <p><b>Dietary:</b> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>
-  `;
+    document.getElementById('details-content').innerHTML = `
+      <p><b>Category:</b> ${recipe.category}</p>
+      <p><b>Cuisine:</b> ${recipe.cuisine}</p>
+      <p><b>Season:</b> ${recipe.season}</p>
+      <p><b>Difficulty:</b> ${recipe.difficulty}</p>
+      <p><b>Prep Time:</b> ${recipe.prep_time}</p>
+      <p><b>Dietary:</b> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>
+    `;
 //Formatting ingrediants
-  document.getElementById('ingredients-content').innerHTML =
-    recipe.ingredients.map(i => `<li>${i}</li>`).join('');
+    document.getElementById('ingredients-content').innerHTML =
+      recipe.ingredients.map(i => `<li>${i}</li>`).join('');
 //Formatting steps
-  document.getElementById('steps-content').innerHTML =
-    recipe.steps.map(s => `<li>${s}</li>`).join('');
+    document.getElementById('steps-content').innerHTML =
+      recipe.steps.map(s => `<li>${s}</li>`).join('');
 //Fetching the story from the separate .json file
-  fetch('dataset/recipes/All_recipe_stories.json')
-    .then(res => res.json())
-    .then(stories => {
-      document.getElementById('storytext').textContent = stories.find(s => s.id === recipe.id).story;
-    });
+    fetch('dataset/recipes/All_recipe_stories.json')
+      .then(res => res.json())
+      .then(stories => {
+        const story = stories.find(s => s.id === recipe.id);
+        document.getElementById('storytext').textContent = story ? story.story : '';
+      });
+  }
+
+  const url = new URLSearchParams(window.location.search).get('id');
+
+  if (url) {
+    // Load recipe by ID thanks jonah :)
+    (async () => {
+      const recipes = await fetch('dataset/recipes/all_recipes.json').then(res => res.json());
+      const recipe = recipes.find(r => r.id == url);
+      if (recipe) {
+        localStorage.setItem('selectedRecipe', JSON.stringify(recipe));
+        renderRecipe(recipe);
+      }
+    })();
+  }
 </script>
 
 <!-- Bottom footer -->

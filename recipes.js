@@ -23,7 +23,7 @@ function displayRecipes() {
       </div>`;
     col.addEventListener('click', () => { // clicking a card saves the recipe and navigates to the detail page
       localStorage.setItem('selectedRecipe', JSON.stringify(recipe)); // save recipe data so recipe.html can read it
-      window.location.href = 'recipe.html';
+      window.location.href = 'recipe.html?id=' + recipe.id;
     });
     grid.appendChild(col); // adds the finished card
   });
