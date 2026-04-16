@@ -1,0 +1,23 @@
+[main-theme="dark"] {
+  --header-bar-bg: #4d0000;
+  --bs-body-bg: rgb(137, 0, 0);
+  --bs-body-color: #f8f9fa;
+}
+
+[main-theme="light"] {
+  --header-bar-bg: #8b1a1a;
+  --bs-body-bg: #fff5f5;
+  --bs-body-color: #212529;
+}
+
+body {
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color);
+}
+
+.header-bar {
+  background-color: var(--header-bar-bg) !important;
+}
+#theme-toggle {
+  cursor: pointer;
+}

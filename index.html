@@ -1,8 +1,10 @@
-<html lang="en">
-<head> 
+<html lang="en" main-theme="dark">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <script src="theme.js"></script>
     <script defer src="js/bootstrap.bundle.min.js"></script>
     <script defer src="recipes.js"></script>
     <title>Home - Company Secrets</title>
@@ -19,7 +21,7 @@
     </form>
 </dialog>
 
-<div class="d-flex align-items-center position-relative" style="background-color: #4d0000;">
+<div class="d-flex align-items-center position-relative header-bar">
   <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
   <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
 </div>
@@ -44,6 +46,7 @@
           <a class="nav-link active" aria-current="page" href="favorites.html">FAVORITES</a>
         </li>
       </ul>
+      <button id="theme-toggle" type="button" aria-label="Toggle theme">Light Mode</button>
     </div>
   </div>
 </nav>
@@ -123,7 +126,7 @@
     </div>
   </div>
 </div>
-<footer class="d-flex justify-content-center align-items-center py-2" style="background-color: #4d0000;">
+<footer class="d-flex justify-content-center align-items-center py-2 header-bar">
     <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
 </footer>
 

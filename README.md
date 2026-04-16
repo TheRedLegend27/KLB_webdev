@@ -43,5 +43,7 @@ https://stackoverflow.com/questions/74726140/how-to-share-url-and-copy-to-clipbo
 
 https://medium.com/@olurebidavid/creating-social-media-share-buttons-94abb1c6a330
 
+https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f
+
 
 
