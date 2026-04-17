@@ -1,5 +1,8 @@
 Final Recipe Website
 
+Test Plan Doc: https://docs.google.com/document/d/1P93zT3HQXQmgYx85dN1JsP0v0HizC93IG6Y2itWjqpc/edit?usp=sharing
+
+
 Optional Features Selected: (We need 70 points total at least)
 Advanced Dynamic Search (10)
 Theme Switcher (10)
