@@ -21,6 +21,14 @@
     </form>
 </dialog>
 
+<script>
+  const dialog = document.querySelector("dialog");
+  if (localStorage.getItem("dialogDismissed")) {
+    dialog.removeAttribute("open");
+  }
+  dialog.addEventListener("close", () => localStorage.setItem("dialogDismissed", "true"));
+</script>
+
 <div class="d-flex align-items-center position-relative header-bar">
   <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
   <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
