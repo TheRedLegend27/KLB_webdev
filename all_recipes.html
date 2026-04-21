@@ -6,10 +6,28 @@
     <link rel="stylesheet" href="css/theme.css">
     <script src="theme.js"></script>
     <script defer src="js/bootstrap.bundle.min.js"></script>
-    <title>About - Comany Secrets</title>
+    <script defer src="recipes.js"></script>
+    <title>Home - Company Secrets</title>
 </head>
 
-<body class="text-center">
+<body> <!-- Now using bootstrap -->
+
+<dialog open>
+    <h2>Welcome to Company Secrets</h2>
+    <p>Home of the recipes from <b>Scavenge & Simmer</b> — the survival cooking competition where contestants are dropped into monster-infested maps with one mission: find the ingredients and cook before you become something's dinner.</p>
+    <p>Browse the dishes crafted under pressure, in the dark, with creatures lurking around every corner. Part cooking show. Part survival horror. All chaos.</p>
+    <form method="dialog">
+        <button class="btn btn-secondary">Enter the Kitchen...If You Dare</button>
+    </form>
+</dialog>
+
+<script>
+  const dialog = document.querySelector("dialog");
+  if (localStorage.getItem("dialogDismissed")) {
+    dialog.removeAttribute("open");
+  }
+  dialog.addEventListener("close", () => localStorage.setItem("dialogDismissed", "true"));
+</script>
 
 <div class="d-flex align-items-center position-relative header-bar">
   <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
@@ -65,20 +83,21 @@
         </ul>
       </div>
   </div>
+
+    <div class="search-bar">
+        <div class="input-group">
+            <form class="d-flex ms-auto" onsubmit="return false">
+            <input class="form-control me-1" type="search" placeholder="Search..." id="search-input">
+            </form>
+        </div>
+    </div>
 </nav>
 
-<div class="container py-4">
-
-  <img src="TV_Logo.png" alt="TV Logo" class="img-fluid mb-4" style="max-height: 200px;">
-
-  <h2><b>About the Show</b></h2>
-  <p><b>Scavenge & Simmer</b> is a survival cooking competition unlike anything on television. Inspired by the chaos and terror of <em>Lethal Company</em>, contestants are dropped into dangerous, monster-infested maps with one mission: find the ingredients and cook before you become something's dinner.</p>
-  <p>Each episode sends a new group of contestants into an abandoned facility or alien landscape filled with deadly creatures lurking in every shadow. Their goal? Scavenge the map for fresh ingredients, exotic spices, and rare finds — all while staying alive. The catch: the monsters never sleep, and the clock is always ticking.</p>
-  <p>Contestants must balance speed and stealth as they hunt for ingredients. Make too much noise opening a cabinet and you might attract something you really don't want to meet. Find the perfect haul and you'll earn the chance to cook a masterpiece back at base. Get caught empty-handed — or worse, get caught at all — and you're going home.</p>
-  <p>Part cooking show. Part survival horror. All chaos. <b>Scavenge & Simmer</b> — where every meal could be your last.</p>
-
-  <img src="TV_I_Want.png" alt="TV" class="img-fluid" style="max-height: 350px;">
-
+<div class="container-fluid px-4 py-4" id="Recipes">
+  <div class="row" id="recipe-grid">
+    <div class="col-12 text-center py-5">
+    </div>
+  </div>
 </div>
 <footer class="d-flex justify-content-center align-items-center py-2 header-bar">
     <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
