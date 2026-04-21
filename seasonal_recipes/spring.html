@@ -1,0 +1,66 @@
+<html lang="en" main-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <script src="../theme.js"></script>
+    <script defer src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="spring.js"></script>
+    <title>About - Comany Secrets</title>
+</head>
+
+<body class="text-center">
+
+<div class="d-flex align-items-center position-relative header-bar">
+  <img src="../logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
+  <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../index.html#Recipes">Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../favorites.html">Favorites</a>
+        </li>
+      </ul>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="theme-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Dark Mode
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><button class="dropdown-item" onclick="setTheme('dark')">Dark Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('light')">Light Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('seizure')">Seizure Mode</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid px-4 py-4" id="Recipes">
+  <div class="row" id="recipe-grid">
+    <div class="col-12 text-center py-5">
+    </div>
+  </div>
+</div>
+<footer class="d-flex justify-content-center align-items-center py-2 header-bar">
+    <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
+</footer>
+
+</body>
+</html>
+

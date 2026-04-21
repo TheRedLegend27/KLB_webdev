@@ -23,7 +23,7 @@ function displayRecipes() {
       </div>`;
     col.addEventListener('click', () => { // clicking a card saves the recipe and navigates to the detail page
       localStorage.setItem('selectedRecipe', JSON.stringify(recipe)); // save recipe data so recipe.html can read it
-      window.location.href = 'recipe.html?id=' + recipe.id;
+      window.location.href = '../recipe.html?id=' + recipe.id;
     });
     grid.appendChild(col); // adds the finished card
   });
@@ -50,7 +50,7 @@ async function loadRecipes() {
 
   if (!grid) return;
 
-  const res = await fetch('dataset/recipes/all_recipes.json');
+  const res = await fetch('../dataset/recipes/spring_recipes.json');
   allRecipes = await res.json();
   showRecipes(allRecipes);
 
@@ -93,4 +93,3 @@ function removeFromFavorites(id) {
   let favorites = getFavorites().filter(r => String(r.id) !== String(id));
   saveFavorites(favorites);
 }
-
