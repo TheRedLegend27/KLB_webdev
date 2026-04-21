@@ -39,7 +39,7 @@
     <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
       <span class="visually-hidden">Toggle Dropdown</span>
     </button>
-        <ul class="dropdown-menu dropdown-menu-end">
+        <ul class="dropdown-menu dropdown-menu-end">        
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="spring.html">Spring</a>
         </li>
@@ -49,9 +49,21 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="autumn.html">Autumn</a>
         </li>
-
         </ul>
   </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="theme-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Dark Mode
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><button class="dropdown-item" onclick="setTheme('dark')">Dark Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('light')">Light Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('seizure')">Seizure Mode</button></li>
+        </ul>
+      </div>
+  </div>
+</nav>
 
 <div class="container-fluid px-4 py-4" id="Recipes">
   <div class="row" id="recipe-grid">
