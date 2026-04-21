@@ -12,6 +12,22 @@
   --title-color: black;
 }
 
+[main-theme="seizure"] {
+  --header-bar-bg: #000;
+  --bs-body-bg: #000;
+  --bs-body-color: #fff;
+  --title-color: white;
+}
+
+@keyframes seizuremode {
+  0%, 100% { filter: grayscale(1); }
+  50% { filter: grayscale(1) invert(1); }
+}
+
+[main-theme="seizure"] body {
+  animation: seizuremode 0.25s step-end infinite;
+}
+
 body {
   background-color: var(--bs-body-bg) !important;
   color: var(--bs-body-color);
