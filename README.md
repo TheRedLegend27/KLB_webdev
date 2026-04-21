@@ -18,7 +18,9 @@ Michael: Worked on initial structure of page. Added all of the dataset linking c
 
 David:
 
-AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc. AI was used to create the text about the webpage/show in about.html.
+AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc. AI was used to create the text about the webpage/show in about.html. 
+
+AI was used to help debug the favorites page and functionality. 
 
 Sources:
 

@@ -7,6 +7,7 @@
     <script src="theme.js"></script>
     <script defer src="js/bootstrap.bundle.min.js"></script>
     <script defer src="recipes.js"></script>
+    <script defer src="favorites.js"></script>
     <title>Favorites - Company Secrets</title>
 </head>
 
@@ -14,7 +15,7 @@
 
 <div class="d-flex align-items-center position-relative header-bar">
   <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
-  <span class="h1 mb-0 position-absolute start-50 translate-middle-x"><b>Company Secrets</b></span>
+  <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
 </div>
 
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
@@ -41,3 +42,10 @@
     </div>
   </div>
 </nav>
+
+<div class="container mt-4">
+  <h2 class="text-center mb-4">My Favorites</h2>
+  <div id="favoritesList" class="row"></div>
+</div>
+
+</body>

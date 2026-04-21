@@ -7,8 +7,21 @@
   <link rel="stylesheet" href="css/theme.css">
   <script src="theme.js"></script>
   <script defer src="js/bootstrap.bundle.min.js"></script>
+  <script defer src="recipes.js"></script>
   <title>Recipe - Company Secrets</title>
 </head>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="favoriteToast" class="toast bg-dark text-white" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header bg-dark text-white border-secondary">
+      <strong class="me-auto">Favorites</strong>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body text-white" id="favoriteToastBody">
+      Added to favorites
+    </div>
+  </div>
+</div>
 
 <body>
 
@@ -46,7 +59,7 @@
 <div class="container py-4">
 <a class="link-secondary fs-5" href="index.html">Back to Home</a>
 
-<button type="button" class="btn btn-secondary">Favorite</button>
+<button type="button" class="btn btn-secondary" id="favoriteBtn">Favorite</button>
 <button type="button" class="btn btn-secondary" onclick="copyLink()">Copy Link</button>
 <button type="button" class="btn btn-secondary" onclick="shareOnTwitter()">Share on X</button>
 <button type="button" class="btn btn-secondary" onclick="shareOnFacebook()">Share on Facebook</button>
@@ -142,8 +155,9 @@
         const story = stories.find(s => s.id === recipe.id);
         document.getElementById('storytext').textContent = story ? story.story : '';
       });
+  setupFavoriteButton(recipe);
   }
-
+  
   const url = new URLSearchParams(window.location.search).get('id');
 
   if (url) {
@@ -157,6 +171,50 @@
       }
     })();
   }
+</script>
+
+<script>
+const favBtn = document.getElementById("favoriteBtn");
+
+//Pop up function
+function showFavoriteToast(message) {
+  const toastEl = document.getElementById("favoriteToast");
+  const toastBody = document.getElementById("favoriteToastBody");
+
+  toastBody.textContent = message;
+
+  const toast = bootstrap.Toast.getOrCreateInstance(toastEl, {
+    autohide: true,
+    delay: 2500
+  });
+
+  toast.show();
+}
+
+//Favorite
+function setupFavoriteButton(recipe) {
+  if (!favBtn) return;
+
+  function setFavorited() {
+    favBtn.textContent = "Favorited";
+    favBtn.classList.remove("btn-secondary");
+    favBtn.classList.add("btn-success");
+    favBtn.disabled = true;
+  }
+
+  if (isFavorite(recipe.id)) {
+    setFavorited();
+  }
+
+  favBtn.addEventListener("click", () => {
+    const added = addToFavorites(recipe);
+
+    if (added) {
+      setFavorited();
+      showFavoriteToast(`${recipe.name} added to favorites`);
+    }
+  });
+}
 </script>
 
 <!-- Bottom footer -->

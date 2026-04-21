@@ -46,14 +46,50 @@ function displayRecipes() {
 }
 
 async function loadRecipes() {
-  const res = await fetch('dataset/recipes/all_recipes.json'); // gets the all the recipes, keep as all recipes for now
-  allRecipes = await res.json();
-  showRecipes(allRecipes); // parse and display all recipes (this is old I think we an remove this later because of the limiter)
+  const grid = document.getElementById('recipe-grid');
 
-  document.getElementById('search-input').addEventListener('input', function() { // function for typing in the search box 
-    const query = this.value.toLowerCase(); // sets all input to lowercase
-    showRecipes(allRecipes.filter(r => r.name.toLowerCase().includes(query)));
-  });
+  if (!grid) return;
+
+  const res = await fetch('dataset/recipes/all_recipes.json');
+  allRecipes = await res.json();
+  showRecipes(allRecipes);
+
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      showRecipes(allRecipes.filter(r => r.name.toLowerCase().includes(query)));
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', loadRecipes);
+
+//favorites
+function getFavorites() {
+  return JSON.parse(localStorage.getItem("favorites")) || [];
+}
+
+function saveFavorites(favorites) {
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+function isFavorite(id) {
+  return getFavorites().some(r => String(r.id) === String(id));
+}
+
+function addToFavorites(recipe) {
+  let favorites = getFavorites();
+
+  if (!isFavorite(recipe.id)) {
+    favorites.push(recipe);
+    saveFavorites(favorites);
+    return true;
+  }
+  return false;
+}
+
+function removeFromFavorites(id) {
+  let favorites = getFavorites().filter(r => String(r.id) !== String(id));
+  saveFavorites(favorites);
+}
