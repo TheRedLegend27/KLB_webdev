@@ -14,13 +14,13 @@ Seasonal Recipes (5)
 Total: (70)
 
 
-Michael: Worked on initial structure of page. Added all of the dataset linking code. Added text boxes for the recipes page based on what I made on my portfolio site. Added searching function along with search check. Added limiting function to not display all recipes at once
+Michael: Worked on initial structure of page. Added all of the dataset linking code. Added text boxes for the recipes page based on what I made on my portfolio site. Added searching function along with search check. Added limiting function to not display all recipes at once. Added theme switching and recipe sharing
 
-David:
+David: Worked on initial structure of the page. Edited key styling. Added favorites functionally. Added recipe filtering by season. Refactored home page and website layout.
 
-AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc. AI was used to create the text about the webpage/show in about.html. 
+AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc. AI was used to create the text about the webpage/show in about.html and index.html. 
 
-AI was used to help debug the favorites page and functionality. 
+AI was used to help debug the favorites page and functionality. AI was used to help debug text issues with the dropdown menus
 
 Sources:
 

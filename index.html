@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/theme.css">
     <script src="theme.js"></script>
+    <style>
+      [main-theme="dark"] .container { color: white; }
+    </style>
     <script defer src="js/bootstrap.bundle.min.js"></script>
-    <script defer src="recipes.js"></script>
+    <!-- Taking out for index <script defer src="recipes.js"></script> -->
     <title>Home - Company Secrets</title>
 </head>
 
@@ -128,15 +131,17 @@
   </div>
 </div>
 
-<div class="container-fluid bg-dark text-white">
-  <div class="container">
-      <div class="search-bar">
-          <div class="input-group">
-            <form class="d-flex ms-auto" onsubmit="return false">
-              <input class="form-control me-1" type="search" placeholder="Search..." id="search-input">
-            </form>
-          </div>
-      </div>
+<hr>
+
+<div class="container my-4" style="max-width: 700px;">
+  <p class="text-center">Welcome to <strong>Company Secrets</strong> — your home for every recipe born out of chaos on <em>Scavenge & Simmer</em>. From quick foraged snacks to full survival feasts, browse dishes cooked under pressure, catalogued by season, and ranked by the brave souls who made it out. Use the search bar below or jump straight into the recipe archive to find your next meal.</p>
+  <div class="text-center">
+    <a href="all_recipes.html" class="btn btn-primary text-white">All Recipes</a>
+  </div>
+
+  <div class="textbox mt-4">
+    <h3>Recipe Submission Form</h3>
+    <p class="text-center text-muted mb-0"><em>In progress</em></p>
   </div>
 </div>
 
