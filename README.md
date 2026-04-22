@@ -20,7 +20,7 @@ David: Worked on initial structure of the page. Edited key styling. Added favori
 
 AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc. AI was used to create the text about the webpage/show in about.html and index.html. 
 
-AI was used to help debug the favorites page and functionality. AI was used to help debug text issues with the dropdown menus
+AI was used to help debug the favorites page and functionality. AI was used to help debug text issues with the dropdown menus. AI was used to help create scripts to fix the dataset issues: removing references to images that didnt exist, and added missing recipes from the season json files.
 
 Sources:
 
