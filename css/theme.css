@@ -36,9 +36,27 @@ body {
 .header-bar {
   background-color: var(--header-bar-bg) !important;
 }
-#theme-toggle {
-  cursor: pointer;
-}
+
 #recipe-title {
   color: var(--title-color);
+}
+
+[main-theme="dark"] .navbar .dropdown-menu .dropdown-item {
+  color: white !important;
+}
+
+[main-theme="dark"] .navbar .dropdown-menu .dropdown-item:hover,
+[main-theme="dark"] .navbar .dropdown-menu .dropdown-item:focus {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[main-theme="light"] .navbar .dropdown-menu .dropdown-item {
+  color: black !important;
+}
+
+[main-theme="light"] .navbar .dropdown-menu .dropdown-item:hover,
+[main-theme="light"] .navbar .dropdown-menu .dropdown-item:focus {
+  color: black !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
