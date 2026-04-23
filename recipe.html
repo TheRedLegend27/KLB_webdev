@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <script src="theme.js"></script>
   <script defer src="js/bootstrap.bundle.min.js"></script>
   <script defer src="recipes.js"></script>
@@ -25,13 +26,28 @@
 
 <body>
 
-<div class="d-flex align-items-center position-relative header-bar">
+<!-- MOBILE TOP BAR -->
+<div class="mob-topbar mob-only">
+  <div class="mob-topbar-slot">
+    <button class="mob-topbar-btn" onclick="history.back()" aria-label="Back">&#8592;</button>
+  </div>
+  <span class="mob-topbar-title">COMPANY SECRETS</span>
+  <div class="mob-topbar-slot">
+    <div class="mob-topbar-avatar">
+      <img src="TV_Logo.png" alt="avatar">
+    </div>
+  </div>
+</div>
+
+<!-- DESKTOP HEADER -->
+<div class="d-flex align-items-center position-relative header-bar desk-only">
   <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
   <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
 </div>
 
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<!-- DESKTOP NAV -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top desk-only">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -54,16 +70,16 @@
     </button>
         <ul class="dropdown-menu dropdown-menu-end">
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/spring.html">Spring</a>
+          <a class="dropdown-item" href="seasonal_recipes/spring.html">Spring</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/summer.html">Summer</a>
+          <a class="dropdown-item" href="seasonal_recipes/summer.html">Summer</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/autumn.html">Autumn</a>
+          <a class="dropdown-item" href="seasonal_recipes/autumn.html">Autumn</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/winter.html">Winter</a>
+          <a class="dropdown-item" href="seasonal_recipes/winter.html">Winter</a>
         </li>
         </ul>
   </div>
@@ -81,20 +97,17 @@
   </div>
 </nav>
 
-<!-- Button for back to Home -->
-<div class="container py-4">
+<!-- DESKTOP RECIPE CONTENT -->
+<div class="container py-4 desk-only">
   <a class="btn btn-secondary" href="index.html">Back to Home</a>
 
   <button type="button" class="btn btn-secondary" id="favoriteBtn">Favorite</button>
   <button type="button" class="btn btn-secondary" onclick="copyLink()">Copy Link</button>
   <button type="button" class="btn btn-secondary" onclick="shareOnTwitter()">Share on X</button>
   <button type="button" class="btn btn-secondary" onclick="shareOnFacebook()">Share on Facebook</button>
-  <!-- <button type="button" class="btn btn-secondary" onclick="shareOnInsta()">Share on Instagram</button> -->
-  
-  <!-- Recipe name -->
+
   <h1 id="recipe-title" class="text-center fw-bold my-4"></h1>
 
-  <!-- Text boxes for each section of the recipe page -->
   <div class="boxes-grid">
     <div class="textbox" id="box-story">
       <h3>Recipe Story</h3>
@@ -119,78 +132,232 @@
   </div>
 </div>
 
-<!-- Gets selected recipe -->
+<!-- MOBILE RECIPE LAYOUT -->
+<div class="mob-only" id="mob-recipe-layout">
 
-<!-- Function for sharing to twitter -->
+  <!-- Hero image -->
+  <div class="mob-hero-wrapper" id="mob-hero-wrapper">
+    <img id="mob-hero-img" src="" alt="Recipe image">
+    <div class="mob-hero-overlay">
+      <div class="mob-hero-recipe-badge">CLASSIFIED RECIPE</div>
+      <h1 class="mob-hero-recipe-title" id="mob-hero-title"></h1>
+    </div>
+  </div>
+
+  <!-- Favorite / share bar -->
+  <div class="mob-fav-bar">
+    <button class="mob-fav-btn" id="mob-fav-btn">&#9825; FAVORITE</button>
+    <button class="mob-fav-btn" onclick="copyLink()" style="flex:0 0 auto;padding:10px 14px;">&#128279;</button>
+  </div>
+
+  <!-- Archive Note -->
+  <div class="mob-archive-note" id="mob-archive-note">
+    <div class="mob-section-header">
+      <div class="mob-section-header-line"></div>
+      <span class="mob-section-header-text">THE ARCHIVE NOTE</span>
+      <div class="mob-section-header-line"></div>
+    </div>
+    <p class="mob-story-text" id="mob-story-text">Loading field notes...</p>
+  </div>
+
+  <!-- Stat tiles -->
+  <div class="mob-stat-tiles" id="mob-stat-tiles"></div>
+
+  <!-- Ingredients -->
+  <div class="mob-ingredients-block" id="mob-ingredients-block">
+    <div class="mob-ingredients-title">Ingredients</div>
+    <ul class="mob-ingredients-list" id="mob-ingredients-list"></ul>
+  </div>
+
+  <!-- Field Instructions -->
+  <div class="mob-steps-section" id="mob-steps-section">
+    <div class="mob-steps-heading">&#128214;&nbsp; FIELD INSTRUCTIONS</div>
+    <div id="mob-steps-list"></div>
+  </div>
+
+  <!-- Security Note -->
+  <div class="mob-security-note" id="mob-security-note">
+    <div class="mob-security-note-heading">&#128274; SECURITY NOTE</div>
+    <p class="mob-security-note-text" id="mob-security-note-text"></p>
+  </div>
+
+</div>
+
+<!-- DESKTOP FOOTER -->
+<footer class="d-flex justify-content-center align-items-center py-2 header-bar desk-only">
+    <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
+</footer>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mob-bottom-nav mob-only">
+  <a href="index.html" class="mob-nav-tab active">
+    <span class="mob-nav-icon">&#127968;</span>
+    HOME
+  </a>
+  <a href="all_recipes.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#128193;</span>
+    ARCHIVE
+  </a>
+  <a href="favorites.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#128100;</span>
+    PROFILE
+  </a>
+</nav>
+
 <script>
+  /* ---- Sharing helpers ---- */
   function shareOnTwitter() {
-    const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent("Check out this recipe I found!");
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
-    window.open(twitterUrl, '_blank');
+    const url  = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent('Check out this recipe I found!');
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
   }
 
-  //Function for sharing to Facebook
   function shareOnFacebook() {
     const url = encodeURIComponent(window.location.href);
-    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-    window.open(facebookUrl, '_blank');
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
   }
 
-  //Function for sharing to Instagram
-  //function shareOnInsta() {
-   // const url = encodeURIComponent(window.location.href);
-    //const insta = ();
-    //window.open(insta, '_blank');
-  //}
-  
-
-  //Function for copying link
   async function copyLink() {
-    navigator.clipboard.writeText(window.location.href);
-    alert("Link Copied!");
+    await navigator.clipboard.writeText(window.location.href);
+    showFavoriteToast('Link copied!');
   }
 
-  function renderRecipe(recipe) {
-// Gets name
-    document.getElementById('recipe-title').textContent = recipe.name;
+  /* ---- Mobile helpers ---- */
+  function isMobileViewport() { return window.innerWidth <= 767; }
 
-//Gets images
+  function getSeasonIcon(season) {
+    const map = { Winter: '&#10052;', Summer: '&#9728;', Spring: '&#127807;', Autumn: '&#127810;', All: '&#127774;' };
+    return map[season] || '&#127757;';
+  }
+
+  function parseStepHeading(step) {
+    const words = step.split(' ');
+    const headWords = words.slice(0, Math.min(4, words.length));
+    const heading = headWords.join(' ').replace(/[,.]$/, '').toUpperCase();
+    const body = words.length > 4 ? words.slice(4).join(' ') : step;
+    return { heading, body };
+  }
+
+  function generateSecurityNote(recipe) {
+    const pool = [
+      `Recipe #${recipe.id} is classified under Operation ${recipe.season || recipe.category}. Dietary clearance: ${recipe.dietary && recipe.dietary.length ? recipe.dietary.join(', ') : 'Standard issue'}. Distribute to authorized personnel only.`,
+      `Prep time of ${recipe.prep_time} has been field-confirmed. ${recipe.difficulty} difficulty rating. All ${recipe.ingredients ? recipe.ingredients.length : '?'} components must be sourced through approved channels.`,
+      `This ${recipe.cuisine || 'field'} operation has been validated. Do not duplicate without authorisation. Keep preparation area sterile and dispose of all remnants per protocol.`
+    ];
+    return pool[recipe.id % pool.length];
+  }
+
+  /* ---- Populate mobile recipe layout ---- */
+  function populateMobile(recipe) {
+    const heroImg = document.getElementById('mob-hero-img');
+    if (heroImg) heroImg.src = `dataset/images/${recipe.images[0]}`;
+
+    const heroTitle = document.getElementById('mob-hero-title');
+    if (heroTitle) heroTitle.textContent = recipe.name;
+
+    /* Stat tiles */
+    const tilesEl = document.getElementById('mob-stat-tiles');
+    if (tilesEl) {
+      const tiles = [
+        { icon: getSeasonIcon(recipe.season), label: 'CATEGORY',   value: recipe.season || recipe.category, accent: false },
+        { icon: '&#127757;',                  label: 'CUISINE',    value: recipe.cuisine,                   accent: false },
+        { icon: '&#128202;',                  label: 'DIFFICULTY', value: recipe.difficulty,                accent: false },
+        { icon: '&#9200;',                    label: 'PREP TIME',  value: recipe.prep_time,                 accent: true  },
+      ];
+      tilesEl.innerHTML = tiles.map(t => `
+        <div class="mob-stat-tile${t.accent ? ' accent' : ''}">
+          <span class="mob-stat-icon">${t.icon}</span>
+          <span class="mob-stat-label">${t.label}</span>
+          <span class="mob-stat-value">${t.value || 'N/A'}</span>
+        </div>`).join('');
+    }
+
+    /* Ingredients */
+    const ingEl = document.getElementById('mob-ingredients-list');
+    if (ingEl && recipe.ingredients) {
+      ingEl.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join('');
+    }
+
+    /* Steps */
+    const stepsEl = document.getElementById('mob-steps-list');
+    if (stepsEl && recipe.steps) {
+      stepsEl.innerHTML = recipe.steps.map((step, idx) => {
+        const { heading, body } = parseStepHeading(step);
+        return `
+          <div class="mob-step">
+            <div class="mob-step-badge">${idx + 1}</div>
+            <div class="mob-step-body">
+              <div class="mob-step-heading">${heading}</div>
+              <div class="mob-step-text">${body}</div>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    /* Security note */
+    const secEl = document.getElementById('mob-security-note-text');
+    if (secEl) secEl.textContent = generateSecurityNote(recipe);
+
+    /* Mobile favorite button */
+    const mobFavBtn = document.getElementById('mob-fav-btn');
+    if (mobFavBtn) {
+      if (isFavorite(recipe.id)) {
+        mobFavBtn.textContent = '✓ FAVORITED';
+        mobFavBtn.classList.add('favorited');
+      }
+      mobFavBtn.addEventListener('click', () => {
+        const added = addToFavorites(recipe);
+        if (added) {
+          mobFavBtn.textContent = '✓ FAVORITED';
+          mobFavBtn.classList.add('favorited');
+          showFavoriteToast(`${recipe.name} added to favorites`);
+        }
+      });
+    }
+  }
+
+  /* ---- Main render function (desktop + mobile) ---- */
+  function renderRecipe(recipe) {
+    /* Desktop */
+    document.getElementById('recipe-title').textContent = recipe.name;
     document.getElementById('images-content').innerHTML =
       recipe.images.map(img => `<img src="dataset/images/${img}" class="recipe-img">`).join('');
-
-//Gets recipe information
     document.getElementById('details-content').innerHTML = `
       <p><b>Category:</b> ${recipe.category}</p>
       <p><b>Cuisine:</b> ${recipe.cuisine}</p>
       <p><b>Season:</b> ${recipe.season}</p>
       <p><b>Difficulty:</b> ${recipe.difficulty}</p>
       <p><b>Prep Time:</b> ${recipe.prep_time}</p>
-      <p><b>Dietary:</b> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>
-    `;
-//Formatting ingrediants
+      <p><b>Dietary:</b> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>`;
     document.getElementById('ingredients-content').innerHTML =
       recipe.ingredients.map(i => `<li>${i}</li>`).join('');
-//Formatting steps
     document.getElementById('steps-content').innerHTML =
       recipe.steps.map(s => `<li>${s}</li>`).join('');
-//Fetching the story from the separate .json file
+
+    /* Mobile */
+    populateMobile(recipe);
+
+    /* Story (async — populates both) */
     fetch('dataset/recipes/All_recipe_stories.json')
       .then(res => res.json())
       .then(stories => {
         const story = stories.find(s => s.id === recipe.id);
-        document.getElementById('storytext').textContent = story ? story.story : '';
+        const text  = story ? story.story : 'No field notes available for this classified recipe.';
+        const dtEl  = document.getElementById('storytext');
+        if (dtEl) dtEl.textContent = text;
+        const mobEl = document.getElementById('mob-story-text');
+        if (mobEl) mobEl.textContent = text;
       });
-  setupFavoriteButton(recipe);
-  }
-  
-  const url = new URLSearchParams(window.location.search).get('id');
 
-  if (url) {
-    // Load recipe by ID thanks jonah :)
+    setupFavoriteButton(recipe);
+  }
+
+  /* ---- Load recipe by URL param ---- */
+  const urlId = new URLSearchParams(window.location.search).get('id');
+  if (urlId) {
     (async () => {
-      const recipes = await fetch('dataset/recipes/all_recipes.json').then(res => res.json());
-      const recipe = recipes.find(r => r.id == url);
+      const recipes = await fetch('dataset/recipes/all_recipes.json').then(r => r.json());
+      const recipe  = recipes.find(r => r.id == urlId);
       if (recipe) {
         localStorage.setItem('selectedRecipe', JSON.stringify(recipe));
         renderRecipe(recipe);
@@ -200,53 +367,39 @@
 </script>
 
 <script>
-const favBtn = document.getElementById("favoriteBtn");
+  /* ---- Favorite toast + button (desktop) ---- */
+  const favBtn = document.getElementById('favoriteBtn');
 
-//Pop up function
-function showFavoriteToast(message) {
-  const toastEl = document.getElementById("favoriteToast");
-  const toastBody = document.getElementById("favoriteToastBody");
-
-  toastBody.textContent = message;
-
-  const toast = bootstrap.Toast.getOrCreateInstance(toastEl, {
-    autohide: true,
-    delay: 2500
-  });
-
-  toast.show();
-}
-
-//Favorite
-function setupFavoriteButton(recipe) {
-  if (!favBtn) return;
-
-  function setFavorited() {
-    favBtn.textContent = "Favorited";
-    favBtn.classList.remove("btn-secondary");
-    favBtn.classList.add("btn-success");
-    favBtn.disabled = true;
+  function showFavoriteToast(message) {
+    const toastEl   = document.getElementById('favoriteToast');
+    const toastBody = document.getElementById('favoriteToastBody');
+    if (!toastEl) return;
+    toastBody.textContent = message;
+    const toast = bootstrap.Toast.getOrCreateInstance(toastEl, { autohide: true, delay: 2500 });
+    toast.show();
   }
 
-  if (isFavorite(recipe.id)) {
-    setFavorited();
-  }
+  function setupFavoriteButton(recipe) {
+    if (!favBtn) return;
 
-  favBtn.addEventListener("click", () => {
-    const added = addToFavorites(recipe);
-
-    if (added) {
-      setFavorited();
-      showFavoriteToast(`${recipe.name} added to favorites`);
+    function setFavorited() {
+      favBtn.textContent = 'Favorited';
+      favBtn.classList.remove('btn-secondary');
+      favBtn.classList.add('btn-success');
+      favBtn.disabled = true;
     }
-  });
-}
-</script>
 
-<!-- Bottom footer -->
-<footer class="d-flex justify-content-center align-items-center py-2 header-bar">
-    <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
-</footer>
+    if (isFavorite(recipe.id)) setFavorited();
+
+    favBtn.addEventListener('click', () => {
+      const added = addToFavorites(recipe);
+      if (added) {
+        setFavorited();
+        showFavoriteToast(`${recipe.name} added to favorites`);
+      }
+    });
+  }
+</script>
 
 </body>
 </html>

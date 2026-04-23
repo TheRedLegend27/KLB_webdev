@@ -5,20 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <script src="theme.js"></script>
     <style>
       [main-theme="dark"] .container { color: white; }
     </style>
     <script defer src="js/bootstrap.bundle.min.js"></script>
-    <!-- Taking out for index <script defer src="recipes.js"></script> -->
+    <script defer src="recipes.js"></script>
     <title>Home - Company Secrets</title>
 </head>
 
-<body> <!-- Now using bootstrap -->
+<body>
 
+<!-- MOBILE TOP BAR -->
+<div class="mob-topbar mob-only">
+  <div class="mob-topbar-slot">
+    <button class="mob-topbar-btn" aria-label="Menu">&#9776;</button>
+  </div>
+  <span class="mob-topbar-title">COMPANY SECRETS</span>
+  <div class="mob-topbar-slot">
+    <div class="mob-topbar-avatar">
+      <img src="TV_Logo.png" alt="avatar">
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE HOME CONTENT -->
+<div id="mob-home-content" class="mob-only">
+
+  <!-- Hero card -->
+  <div class="mob-hero-card">
+    <h2 class="mob-hero-heading">RECIPES BORN OUT OF CHAOS</h2>
+    <p class="mob-hero-subtitle">A classified archive of culinary techniques forged in survival, foraged in secret, and refined in the shadows.</p>
+    <div class="mob-hero-search-wrapper">
+      <span class="mob-hero-search-icon">&#128269;</span>
+      <input
+        type="search"
+        class="mob-hero-search-input"
+        id="mob-hero-search"
+        placeholder="Search the archives..."
+        autocomplete="off"
+        readonly
+      >
+    </div>
+  </div>
+
+  <!-- Featured recipe (populated by JS) -->
+  <div class="mob-featured-card" id="mob-featured-recipe"></div>
+
+  <!-- Submit recipe CTA -->
+  <div class="mob-submit-card">
+    <div class="mob-submit-icon-wrap">&#128203;</div>
+    <div class="mob-submit-title">Submit Recipe</div>
+    <p class="mob-submit-subtitle">Contribute your survival-born discoveries to the collective archive.</p>
+    <button class="mob-submit-btn">START UPLOAD</button>
+  </div>
+
+  <!-- Recent field notes (populated by JS) -->
+  <div class="mob-field-notes-card">
+    <div class="mob-field-notes-label">Recent Field Notes</div>
+    <div id="mob-field-notes-list"></div>
+  </div>
+
+  <!-- Survival dashboard (populated by JS) -->
+  <div class="mob-dashboard-card">
+    <div class="mob-dashboard-header">
+      <div class="mob-dashboard-title">Survival Dashboard</div>
+      <span style="font-size:1.2rem;">&#128737;</span>
+    </div>
+    <p class="mob-dashboard-subtitle">Real-time culinary intelligence from foraged sites.</p>
+    <div class="mob-dashboard-grid" id="mob-dashboard-grid"></div>
+  </div>
+
+</div>
+
+<!-- DESKTOP: welcome dialog -->
 <dialog open>
     <h2>Welcome to Company Secrets</h2>
-    <p>Home of the recipes from <b>Scavenge & Simmer</b> — the survival cooking competition where contestants are dropped into monster-infested maps with one mission: find the ingredients and cook before you become something's dinner.</p>
+    <p>Home of the recipes from <b>Scavenge &amp; Simmer</b> — the survival cooking competition where contestants are dropped into monster-infested maps with one mission: find the ingredients and cook before you become something's dinner.</p>
     <p>Browse the dishes crafted under pressure, in the dark, with creatures lurking around every corner. Part cooking show. Part survival horror. All chaos.</p>
     <form method="dialog">
         <button class="btn btn-secondary">Enter the Kitchen...If You Dare</button>
@@ -33,13 +97,15 @@
   dialog.addEventListener("close", () => localStorage.setItem("dialogDismissed", "true"));
 </script>
 
-<div class="d-flex align-items-center position-relative header-bar">
+<!-- DESKTOP HEADER -->
+<div class="d-flex align-items-center position-relative header-bar desk-only">
   <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
   <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
 </div>
 
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<!-- DESKTOP NAV -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top desk-only">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -62,16 +128,16 @@
     </button>
         <ul class="dropdown-menu dropdown-menu-end">
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/spring.html">Spring</a>
+          <a class="dropdown-item" href="seasonal_recipes/spring.html">Spring</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/summer.html">Summer</a>
+          <a class="dropdown-item" href="seasonal_recipes/summer.html">Summer</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/autumn.html">Autumn</a>
+          <a class="dropdown-item" href="seasonal_recipes/autumn.html">Autumn</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/winter.html">Winter</a>
+          <a class="dropdown-item" href="seasonal_recipes/winter.html">Winter</a>
         </li>
         </ul>
   </div>
@@ -89,7 +155,8 @@
   </div>
 </nav>
 
-<div class="container-sm text-center">
+<!-- DESKTOP CONTENT -->
+<div class="container-sm text-center desk-only">
   <div class="row">
     <div class="col-sm-3 mx-auto">
     <div id="carouselIndicators" class="carousel slide">
@@ -131,10 +198,10 @@
   </div>
 </div>
 
-<hr>
+<hr class="desk-only">
 
-<div class="container my-4" style="max-width: 700px;">
-  <p class="text-center">Welcome to <strong>Company Secrets</strong> — your home for every recipe born out of chaos on <em>Scavenge & Simmer</em>. From quick foraged snacks to full survival feasts, browse dishes cooked under pressure, catalogued by season, and ranked by the brave souls who made it out. Use the search bar below or jump straight into the recipe archive to find your next meal.</p>
+<div class="container my-4 desk-only" style="max-width: 700px;">
+  <p class="text-center">Welcome to <strong>Company Secrets</strong> — your home for every recipe born out of chaos on <em>Scavenge &amp; Simmer</em>. From quick foraged snacks to full survival feasts, browse dishes cooked under pressure, catalogued by season, and ranked by the brave souls who made it out. Use the search bar below or jump straight into the recipe archive to find your next meal.</p>
   <div class="text-center">
     <a href="all_recipes.html" class="btn btn-primary text-white">All Recipes</a>
   </div>
@@ -145,15 +212,41 @@
   </div>
 </div>
 
-<div class="container-fluid px-4 py-4" id="Recipes">
+<div class="container-fluid px-4 py-4 desk-only" id="Recipes">
   <div class="row" id="recipe-grid">
     <div class="col-12 text-center py-5">
     </div>
   </div>
 </div>
-<footer class="d-flex justify-content-center align-items-center py-2 header-bar">
+
+<!-- DESKTOP FOOTER -->
+<footer class="d-flex justify-content-center align-items-center py-2 header-bar desk-only">
     <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
 </footer>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mob-bottom-nav mob-only">
+  <a href="index.html" class="mob-nav-tab active">
+    <span class="mob-nav-icon">&#127968;</span>
+    HOME
+  </a>
+  <a href="all_recipes.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#128193;</span>
+    ARCHIVE
+  </a>
+  <a href="favorites.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#128100;</span>
+    PROFILE
+  </a>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth <= 767) {
+      loadHomeData();
+    }
+  });
+</script>
 
 </body>
 </html>

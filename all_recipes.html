@@ -4,20 +4,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <script src="theme.js"></script>
     <script defer src="js/bootstrap.bundle.min.js"></script>
     <script defer src="recipes.js"></script>
-    <script defer src="sidepanel.js"></script>
-    <title>Home - Company Secrets</title>
+    <title>Archive - Company Secrets</title>
 </head>
 
-<body> <!-- Now using bootstrap -->
+<body>
 
+<!-- MOBILE TOP BAR -->
+<div class="mob-topbar mob-only">
+  <div class="mob-topbar-slot">
+    <button class="mob-topbar-btn" aria-label="Menu">&#9776;</button>
+  </div>
+  <span class="mob-topbar-title">COMPANY SECRETS</span>
+  <div class="mob-topbar-slot">
+    <div class="mob-topbar-avatar">
+      <img src="TV_Logo.png" alt="avatar">
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE SEARCH BAR -->
+<div class="mob-search-bar mob-only">
+  <div class="mob-search-bar-wrapper">
+    <span class="mob-search-icon">&#128269;</span>
+    <input
+      type="search"
+      class="mob-search-input"
+      id="mob-search-input"
+      placeholder="SCAN ARCHIVES FOR INTEL..."
+      autocomplete="off"
+    >
+  </div>
+</div>
+
+<!-- MOBILE FILTER CHIPS -->
+<div class="mob-filter-chips mob-only" id="mob-filter-chips">
+  <button class="mob-chip active" data-filter="ALL" data-filter-type="all"># ALL_INTEL</button>
+  <button class="mob-chip" data-filter="Winter" data-filter-type="season"># WINTER_RESERVES</button>
+  <button class="mob-chip" data-filter="Autumn" data-filter-type="season"># AUTUMN_HARVEST</button>
+  <button class="mob-chip" data-filter="Spring" data-filter-type="season"># SPRING_FORAGED</button>
+  <button class="mob-chip" data-filter="Summer" data-filter-type="season"># SUMMER_RATIONS</button>
+  <button class="mob-chip" data-filter="Breakfast" data-filter-type="category"># FIELD_BREAKFAST</button>
+  <button class="mob-chip" data-filter="Dinner" data-filter-type="category"># DINNER_OPS</button>
+  <button class="mob-chip" data-filter="Desserts" data-filter-type="category"># SWEET_INTEL</button>
+  <button class="mob-chip" data-filter="High-Protein" data-filter-type="dietary"># HIGH_PROTEIN</button>
+  <button class="mob-chip" data-filter="Vegan" data-filter-type="dietary"># VEGAN_OPS</button>
+</div>
+
+<!-- DESKTOP: welcome dialog -->
 <dialog open>
     <h2>Welcome to Company Secrets</h2>
-    <p>Home of the recipes from <b>Scavenge & Simmer</b> — the survival cooking competition where contestants are dropped into monster-infested maps with one mission: find the ingredients and cook before you become something's dinner.</p>
+    <p>Home of the recipes from <b>Scavenge &amp; Simmer</b> — the survival cooking competition where contestants are dropped into monster-infested maps with one mission: find the ingredients and cook before you become something's dinner.</p>
     <p>Browse the dishes crafted under pressure, in the dark, with creatures lurking around every corner. Part cooking show. Part survival horror. All chaos.</p>
     <form method="dialog">
         <button class="btn btn-secondary">Enter the Kitchen...If You Dare</button>
@@ -32,13 +74,15 @@
   dialog.addEventListener("close", () => localStorage.setItem("dialogDismissed", "true"));
 </script>
 
-<div class="d-flex align-items-center position-relative header-bar">
+<!-- DESKTOP HEADER -->
+<div class="d-flex align-items-center position-relative header-bar desk-only">
   <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
   <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
 </div>
 
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<!-- DESKTOP NAV -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top desk-only">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -61,16 +105,16 @@
     </button>
         <ul class="dropdown-menu dropdown-menu-end">
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/spring.html">Spring</a>
+          <a class="dropdown-item" href="seasonal_recipes/spring.html">Spring</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/summer.html">Summer</a>
+          <a class="dropdown-item" href="seasonal_recipes/summer.html">Summer</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/autumn.html">Autumn</a>
+          <a class="dropdown-item" href="seasonal_recipes/autumn.html">Autumn</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/winter.html">Winter</a>
+          <a class="dropdown-item" href="seasonal_recipes/winter.html">Winter</a>
         </li>
         </ul>
   </div>
@@ -87,7 +131,7 @@
       </div>
   </div>
 
-    <div class="search-bar">
+    <div class="search-bar desk-only">
         <div class="input-group">
             <form class="d-flex ms-auto" onsubmit="return false">
               <input class="form-control me-1" type="search" placeholder="Search..." id="search-input">
@@ -108,20 +152,40 @@
       </div>
     </div>
   </div>
-  <div class="side-panel">
+  <div class="side-panel desk-only">
     This is the side panel filter content
   </div>
 </div>
 
 <script>
-  document.querySelector(".side-panel-toggle").addEventListener("click", () => {
-    document.querySelector(".wrapper").classList.toggle("side-panel-open");
-  });
+  const spToggle = document.querySelector(".side-panel-toggle");
+  if (spToggle) {
+    spToggle.addEventListener("click", () => {
+      document.querySelector(".wrapper").classList.toggle("side-panel-open");
+    });
+  }
 </script>
 
-<footer class="d-flex justify-content-center align-items-center py-2 header-bar">
+<!-- DESKTOP FOOTER -->
+<footer class="d-flex justify-content-center align-items-center py-2 header-bar desk-only">
     <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
 </footer>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mob-bottom-nav mob-only">
+  <a href="index.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#127968;</span>
+    HOME
+  </a>
+  <a href="all_recipes.html" class="mob-nav-tab active">
+    <span class="mob-nav-icon">&#128193;</span>
+    ARCHIVE
+  </a>
+  <a href="favorites.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#128100;</span>
+    PROFILE
+  </a>
+</nav>
 
 </body>
 </html>
