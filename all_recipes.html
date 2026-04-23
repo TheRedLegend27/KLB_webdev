@@ -1,0 +1,191 @@
+<html lang="en" main-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="theme.js"></script>
+    <script defer src="js/bootstrap.bundle.min.js"></script>
+    <script defer src="recipes.js"></script>
+    <title>Archive - Company Secrets</title>
+</head>
+
+<body>
+
+<!-- MOBILE TOP BAR -->
+<div class="mob-topbar mob-only">
+  <div class="mob-topbar-slot">
+    <button class="mob-topbar-btn" aria-label="Menu">&#9776;</button>
+  </div>
+  <span class="mob-topbar-title">COMPANY SECRETS</span>
+  <div class="mob-topbar-slot">
+    <div class="mob-topbar-avatar">
+      <img src="TV_Logo.png" alt="avatar">
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE SEARCH BAR -->
+<div class="mob-search-bar mob-only">
+  <div class="mob-search-bar-wrapper">
+    <span class="mob-search-icon">&#128269;</span>
+    <input
+      type="search"
+      class="mob-search-input"
+      id="mob-search-input"
+      placeholder="SCAN ARCHIVES FOR INTEL..."
+      autocomplete="off"
+    >
+  </div>
+</div>
+
+<!-- MOBILE FILTER CHIPS -->
+<div class="mob-filter-chips mob-only" id="mob-filter-chips">
+  <button class="mob-chip active" data-filter="ALL" data-filter-type="all"># ALL_INTEL</button>
+  <button class="mob-chip" data-filter="Winter" data-filter-type="season"># WINTER_RESERVES</button>
+  <button class="mob-chip" data-filter="Autumn" data-filter-type="season"># AUTUMN_HARVEST</button>
+  <button class="mob-chip" data-filter="Spring" data-filter-type="season"># SPRING_FORAGED</button>
+  <button class="mob-chip" data-filter="Summer" data-filter-type="season"># SUMMER_RATIONS</button>
+  <button class="mob-chip" data-filter="Breakfast" data-filter-type="category"># FIELD_BREAKFAST</button>
+  <button class="mob-chip" data-filter="Dinner" data-filter-type="category"># DINNER_OPS</button>
+  <button class="mob-chip" data-filter="Desserts" data-filter-type="category"># SWEET_INTEL</button>
+  <button class="mob-chip" data-filter="High-Protein" data-filter-type="dietary"># HIGH_PROTEIN</button>
+  <button class="mob-chip" data-filter="Vegan" data-filter-type="dietary"># VEGAN_OPS</button>
+</div>
+
+<!-- DESKTOP: welcome dialog -->
+<dialog open>
+    <h2>Welcome to Company Secrets</h2>
+    <p>Home of the recipes from <b>Scavenge &amp; Simmer</b> — the survival cooking competition where contestants are dropped into monster-infested maps with one mission: find the ingredients and cook before you become something's dinner.</p>
+    <p>Browse the dishes crafted under pressure, in the dark, with creatures lurking around every corner. Part cooking show. Part survival horror. All chaos.</p>
+    <form method="dialog">
+        <button class="btn btn-secondary">Enter the Kitchen...If You Dare</button>
+    </form>
+</dialog>
+
+<script>
+  const dialog = document.querySelector("dialog");
+  if (localStorage.getItem("dialogDismissed")) {
+    dialog.removeAttribute("open");
+  }
+  dialog.addEventListener("close", () => localStorage.setItem("dialogDismissed", "true"));
+</script>
+
+<!-- DESKTOP HEADER -->
+<div class="d-flex align-items-center position-relative header-bar desk-only">
+  <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
+  <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
+</div>
+
+<!-- DESKTOP NAV -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top desk-only">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mb-4 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html#Home">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="about.html">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="favorites.html">FAVORITES</a>
+        </li>
+      </ul>
+
+  <div class="btn-group">
+    <a href="all_recipes.html" class="btn btn-primary text-white">RECIPES</a>
+    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+        <li class="nav-item">
+          <a class="dropdown-item" href="seasonal_recipes/spring.html">Spring</a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" href="seasonal_recipes/summer.html">Summer</a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" href="seasonal_recipes/autumn.html">Autumn</a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" href="seasonal_recipes/winter.html">Winter</a>
+        </li>
+        </ul>
+  </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="theme-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Dark Mode
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><button class="dropdown-item" onclick="setTheme('dark')">Dark Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('light')">Light Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('seizure')">Seizure Mode</button></li>
+        </ul>
+      </div>
+  </div>
+
+    <div class="search-bar desk-only">
+        <div class="input-group">
+            <form class="d-flex ms-auto" onsubmit="return false">
+              <input class="form-control me-1" type="search" placeholder="Search..." id="search-input">
+            </form>
+            <button class="side-panel-toggle" type="button">
+              <span class="material-icons sp-icon-open">keyboard_double_arrow_right</span>
+              <span class="material-icons sp-icon-close">keyboard_double_arrow_left</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="wrapper side-panel-open">
+  <div class="main">
+    <div class="container-fluid px-4 py-4" id="Recipes">
+      <div class="row" id="recipe-grid">
+        <div class="col-12 text-center py-5"></div>
+      </div>
+    </div>
+  </div>
+  <div class="side-panel desk-only">
+    This is the side panel filter content
+  </div>
+</div>
+
+<script>
+  const spToggle = document.querySelector(".side-panel-toggle");
+  if (spToggle) {
+    spToggle.addEventListener("click", () => {
+      document.querySelector(".wrapper").classList.toggle("side-panel-open");
+    });
+  }
+</script>
+
+<!-- DESKTOP FOOTER -->
+<footer class="d-flex justify-content-center align-items-center py-2 header-bar desk-only">
+    <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
+</footer>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mob-bottom-nav mob-only">
+  <a href="index.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#127968;</span>
+    HOME
+  </a>
+  <a href="all_recipes.html" class="mob-nav-tab active">
+    <span class="mob-nav-icon">&#128193;</span>
+    ARCHIVE
+  </a>
+  <a href="favorites.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#128100;</span>
+    PROFILE
+  </a>
+</nav>
+
+</body>
+</html>

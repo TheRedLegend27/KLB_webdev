@@ -1,133 +1,54 @@
-Michael:
-Worked on 50% of tags, including the paragraphs and highlights. 
-Worked on 1/20 to create website and begin making the first presentation.
-Added more text to website and finished tag slides
+Final Recipe Website
 
-David: 
-Worked on 50% of the tags, including the figure.
-Met and worked 1/20/2026 4:40 - 6:00
-Worked on the site and added a table with Team 5 tags 1/27/26
+Test Plan Doc: https://docs.google.com/document/d/1P93zT3HQXQmgYx85dN1JsP0v0HizC93IG6Y2itWjqpc/edit?usp=sharing
 
-VM Upload Command:  scp -r "C:\Users\Michael\Documents\Projects\webdev\*" marend001@csc391-vm1.eng.franciscan.edu:/srv/csc391web/team2/minHTML/
 
-Tags Used:
+Optional Features Selected: (We need 70 points total at least)
+Advanced Dynamic Search (10)
+Theme Switcher (10)
+Dynamic Recipe Filter & Sorting (10)
+Recipe Sharing (15)
+Submission Form (10)
+Animation for Recipe Actions (10)
+Seasonal Recipes (5)
+Total: (70)
 
-Team 2 Tags:
-<br>
-Done    b 
-<br>
-Done    i 
-<br>
-Done    u
-<br>
-Done    abbr 
-<br>
-Done    q
-<br>
-Done    cite 
-<br>
-Done    hr
-<br>
-Done    pre 
-<br>
-Done    figcaption
-<br>
-Done    blockquote 
-<br>
-Done    mark
-<br>
-Done    figure
-<br>
-Done    figcaption 
-<br>
-Done    time
-<br>
-Done    code
-<br>
 
-Michael and David finsihed TO1 and shared the workload
- TO1
-    Done    Bold text <b>  
-    Done    italicized <i>  
-    Done    Underlined <u>
-    Done    abbreviation <abbr> 
-    Done    defines a short quote <q>
-    Done    Defines the title of a work <cite> 
-    Done    Thematic change in content <hr>
-    Done    defines preformatted text <pre> 
-    Done    defines a caption for a figure element <figcaption>
-    Done    A <blockquote> containing a quoted passage
-    Done    Highlighted keywords using <mark>
-    Done    A <figure> containing an image and a <figcaption> 
-    Done    A <time> element for the publication date
-    Done    <code> elements for inline code snippets or technical terms 
+Michael: Worked on initial structure of page. Added all of the dataset linking code. Added text boxes for the recipes page based on what I made on my portfolio site. Added searching function along with search check. Added limiting function to not display all recipes at once. Added theme switching and recipe sharing
 
-  
-        To2 
-    Michael worked on these tags:
-    Team 1 Tags
-    Done    <header>
-    Done    <footer>
-    Done    <nav>  
-    Done    <main>  
-    Done    <aside>
-    Done    <article>
-    Done    <h> 
-    Done    <section>  
-    
-    David worked on these tags: "I made a table to show different attributes of the free moons in Lethal Company."
-    Team 5 Tags
-    Done    <table>     displaying each product/element with attributes in columns
-    Done    <tr>        tag defines a row in an HTML table.     
-    Done    <td>        tag defines a standard data cell in an HTML table.
-    Done    <th>        tag defines a header cell in an HTML table.
-    Done    <thead>     Proper table structure using
-    Done    <tbody>     Proper table structure using
-    Done    <tfoot>     Proper table structure using
-    Done    <caption>   tag defines a table caption (must be inserted immediately after the <table> tag.)
-    Done    <col>       tag specifies column properties for each column within a <colgroup> element.
-    Done    <colgroup>  tag specifies a group of one or more columns in a table for formatting.
-    Done    <details>    tag specifies additional details that the user can open and close on demand.
-    Done    <summary>   goes along with details element
-    Done    <dialog>    element displaying detailed product specifications
+David: Worked on initial structure of the page. Edited key styling. Added favorites functionally. Added recipe filtering by season. Refactored home page and website layout.
 
-TO1
-    Done    Bold text <b>  
-    Done    italicized <i>  
-    Done    Underlined <u>
-    Done    abbreviation <abbr> 
-    Done    defines a short quote <q>
-    Done    Defines the title of a work <cite> 
-    Done    Thematic change in content <hr>
-    Done    defines preformatted text <pre> 
-    Done    defines a caption for a figure element <figcaption>
-    Done    A <blockquote> containing a quoted passage
-    Done    Highlighted keywords using <mark>
-    Done    A <figure> containing an image and a <figcaption> 
-    Done    A <time> element for the publication date
-    Done    <code> elements for inline code snippets or technical terms 
-        To2 
-    Team 1 Tags
-    Done    <header>
-    Done    <footer>
-    Done    <nav>  
-    Done    <main>  
-    Done    <aside>
-    Done    <article>
-    Done    <h> 
-    Done    <section>  
-    
-    Team 5 Tags
-    Done    <table>     displaying each product/element with attributes in columns
-    Done    <tr>        tag defines a row in an HTML table.     
-    Done    <td>        tag defines a standard data cell in an HTML table.
-    Done    <th>        tag defines a header cell in an HTML table.
-    Done    <thead>     Proper table structure using
-    Done    <tbody>     Proper table structure using
-    Done    <tfoot>     Proper table structure using
-    Done    <caption>   tag defines a table caption (must be inserted immediately after the <table> tag.)
-    Done    <col>       tag specifies column properties for each column within a <colgroup> element.
-    Done    <colgroup>  tag specifies a group of one or more columns in a table for formatting.
-    Done    <details>    tag specifies additional details that the user can open and close on demand.
-    Done    <summary>   goes along with details element
-    Done    <dialog>    element displaying detailed product specifications
+AI: AI was used to generate all images / logos for the webpage. Including logo, recipe picktures, etc. AI was used to create the text about the webpage/show in about.html and index.html. 
+
+AI was used to help debug the favorites page and functionality. AI was used to help debug text issues with the dropdown menus. AI was used to help create scripts to fix the dataset issues: removing references to images that didnt exist, and added missing recipes from the season json files.
+
+Sources:
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+https://developer.mozilla.org/en-US/docs/Web/API/Response/json
+
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+
+https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
+
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+
+https://stackoverflow.com/questions/74726140/how-to-share-url-and-copy-to-clipboard-with-url-change
+
+https://medium.com/@olurebidavid/creating-social-media-share-buttons-94abb1c6a330
+
+https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f
+
+
+

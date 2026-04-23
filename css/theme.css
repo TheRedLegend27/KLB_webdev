@@ -1,0 +1,62 @@
+[main-theme="dark"] {
+  --header-bar-bg: #4d0000;
+  --bs-body-bg: rgb(137, 0, 0);
+  --bs-body-color: #212529;
+  --title-color: white;
+}
+
+[main-theme="light"] {
+  --header-bar-bg: #8b1a1a;
+  --bs-body-bg: #fff5f5;
+  --bs-body-color: #212529;
+  --title-color: black;
+}
+
+[main-theme="seizure"] {
+  --header-bar-bg: #000;
+  --bs-body-bg: #000;
+  --bs-body-color: #fff;
+  --title-color: white;
+}
+
+@keyframes seizuremode {
+  0%, 100% { filter: grayscale(1); }
+  50% { filter: grayscale(1) invert(1); }
+}
+
+[main-theme="seizure"] body {
+  animation: seizuremode 0.25s step-end infinite;
+}
+
+body {
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color);
+}
+
+.header-bar {
+  background-color: var(--header-bar-bg) !important;
+}
+
+#recipe-title {
+  color: var(--title-color);
+}
+
+[main-theme="dark"] .navbar .dropdown-menu .dropdown-item {
+  color: white !important;
+}
+
+[main-theme="dark"] .navbar .dropdown-menu .dropdown-item:hover,
+[main-theme="dark"] .navbar .dropdown-menu .dropdown-item:focus {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[main-theme="light"] .navbar .dropdown-menu .dropdown-item {
+  color: black !important;
+}
+
+[main-theme="light"] .navbar .dropdown-menu .dropdown-item:hover,
+[main-theme="light"] .navbar .dropdown-menu .dropdown-item:focus {
+  color: black !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}

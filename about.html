@@ -1,0 +1,91 @@
+<html lang="en" main-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <script src="theme.js"></script>
+    <style>
+      [main-theme="dark"] .container { color: white; }
+    </style>
+    <script defer src="js/bootstrap.bundle.min.js"></script>
+    <title>About - Comany Secrets</title>
+</head>
+
+<body class="text-center">
+
+<div class="d-flex align-items-center position-relative header-bar">
+  <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
+  <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mb-4 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html#Home">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="about.html">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="favorites.html">FAVORITES</a>
+        </li>
+      </ul>
+
+  <div class="btn-group">
+    <a href="all_recipes.html" class="btn btn-primary text-white">RECIPES</a>
+    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+        <li class="nav-item">
+          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/spring.html">Spring</a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/summer.html">Summer</a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/autumn.html">Autumn</a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" inter-current="page" href="seasonal_recipes/winter.html">Winter</a>
+        </li>
+        </ul>
+  </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="theme-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Dark Mode
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><button class="dropdown-item" onclick="setTheme('dark')">Dark Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('light')">Light Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('seizure')">Seizure Mode</button></li>
+        </ul>
+      </div>
+  </div>
+</nav>
+
+<div class="container py-4">
+
+  <img src="TV_Logo.png" alt="TV Logo" class="img-fluid mb-4" style="max-height: 200px;">
+
+  <h2><b>About the Show</b></h2>
+  <p><b>Scavenge & Simmer</b> is a survival cooking competition unlike anything on television. Inspired by the chaos and terror of <em>Lethal Company</em>, contestants are dropped into dangerous, monster-infested maps with one mission: find the ingredients and cook before you become something's dinner.</p>
+  <p>Each episode sends a new group of contestants into an abandoned facility or alien landscape filled with deadly creatures lurking in every shadow. Their goal? Scavenge the map for fresh ingredients, exotic spices, and rare finds — all while staying alive. The catch: the monsters never sleep, and the clock is always ticking.</p>
+  <p>Contestants must balance speed and stealth as they hunt for ingredients. Make too much noise opening a cabinet and you might attract something you really don't want to meet. Find the perfect haul and you'll earn the chance to cook a masterpiece back at base. Get caught empty-handed — or worse, get caught at all — and you're going home.</p>
+  <p>Part cooking show. Part survival horror. All chaos. <b>Scavenge & Simmer</b> — where every meal could be your last.</p>
+
+  <img src="TV_I_Want.png" alt="TV" class="img-fluid" style="max-height: 350px;">
+
+</div>
+<footer class="d-flex justify-content-center align-items-center py-2 header-bar">
+    <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
+</footer>
+
+</body>
+</html>

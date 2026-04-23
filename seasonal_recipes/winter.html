@@ -1,0 +1,93 @@
+<html lang="en" main-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <script src="../theme.js"></script>
+    <script defer src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="winter.js"></script>
+    <title>Winter Recipes - Company Secrets</title>
+</head>
+
+<body class="text-center">
+
+<div class="mob-topbar mob-only">
+  <div class="mob-topbar-slot">
+    <button class="mob-topbar-btn" onclick="history.back()" aria-label="Back">&#8592;</button>
+  </div>
+  <span class="mob-topbar-title">COMPANY SECRETS</span>
+  <div class="mob-topbar-slot">
+    <div class="mob-topbar-avatar"><img src="../TV_Logo.png" alt="avatar"></div>
+  </div>
+</div>
+
+<div class="mob-search-bar mob-only">
+  <div class="mob-search-bar-wrapper">
+    <span class="mob-search-icon">&#128269;</span>
+    <input type="search" class="mob-search-input" id="mob-search-input" placeholder="SCAN WINTER ARCHIVES..." autocomplete="off">
+  </div>
+</div>
+
+<div class="d-flex align-items-center position-relative header-bar desk-only">
+  <img src="../logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
+  <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top desk-only">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mb-4 mb-lg-0">
+      <li class="nav-item"><a class="nav-link active" href="../index.html">HOME</a></li>
+      <li class="nav-item"><a class="nav-link active" href="../about.html">ABOUT</a></li>
+      <li class="nav-item"><a class="nav-link active" href="../favorites.html">FAVORITES</a></li>
+    </ul>
+    <div class="btn-group">
+      <a href="../all_recipes.html" class="btn btn-primary text-white">RECIPES</a>
+      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="spring.html">Spring</a></li>
+        <li><a class="dropdown-item" href="summer.html">Summer</a></li>
+        <li><a class="dropdown-item" href="autumn.html">Autumn</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="theme-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dark Mode</button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><button class="dropdown-item" onclick="setTheme('dark')">Dark Mode</button></li>
+        <li><button class="dropdown-item" onclick="setTheme('light')">Light Mode</button></li>
+        <li><button class="dropdown-item" onclick="setTheme('seizure')">Seizure Mode</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb bg-secondary desk-only">
+  <a class="breadcrumb-item" href="../index.html">Home</a>
+  <a class="breadcrumb-item" href="../all_recipes.html">Recipes</a>
+  <span class="breadcrumb-item active text-white" aria-current="page">Winter Recipes</span>
+</div>
+
+<div class="container-fluid px-4 py-4" id="Recipes">
+  <div class="row" id="recipe-grid">
+    <div class="col-12 text-center py-5"></div>
+  </div>
+</div>
+
+<footer class="d-flex justify-content-center align-items-center py-2 header-bar desk-only">
+    <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
+</footer>
+
+<nav class="mob-bottom-nav mob-only">
+  <a href="../index.html" class="mob-nav-tab"><span class="mob-nav-icon">&#127968;</span>HOME</a>
+  <a href="../all_recipes.html" class="mob-nav-tab active"><span class="mob-nav-icon">&#128193;</span>ARCHIVE</a>
+  <a href="../favorites.html" class="mob-nav-tab"><span class="mob-nav-icon">&#128100;</span>PROFILE</a>
+</nav>
+
+</body>
+</html>

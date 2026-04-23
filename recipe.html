@@ -1,0 +1,405 @@
+<!-- Header / nav from index.html -->
+<html lang="en" main-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <script src="theme.js"></script>
+  <script defer src="js/bootstrap.bundle.min.js"></script>
+  <script defer src="recipes.js"></script>
+  <title>Recipe - Company Secrets</title>
+</head>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="favoriteToast" class="toast bg-dark text-white" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header bg-dark text-white border-secondary">
+      <strong class="me-auto">Favorites</strong>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body text-white" id="favoriteToastBody">
+      Added to favorites
+    </div>
+  </div>
+</div>
+
+<body>
+
+<!-- MOBILE TOP BAR -->
+<div class="mob-topbar mob-only">
+  <div class="mob-topbar-slot">
+    <button class="mob-topbar-btn" onclick="history.back()" aria-label="Back">&#8592;</button>
+  </div>
+  <span class="mob-topbar-title">COMPANY SECRETS</span>
+  <div class="mob-topbar-slot">
+    <div class="mob-topbar-avatar">
+      <img src="TV_Logo.png" alt="avatar">
+    </div>
+  </div>
+</div>
+
+<!-- DESKTOP HEADER -->
+<div class="d-flex align-items-center position-relative header-bar desk-only">
+  <img src="logo.png" alt="Logo" class="img-fluid me-2" style="height: 100px;">
+  <span class="h1 mb-0 position-absolute start-50 translate-middle-x text-white"><b>Company Secrets</b></span>
+</div>
+
+<!-- DESKTOP NAV -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top desk-only">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mb-4 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html#Home">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="about.html">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="favorites.html">FAVORITES</a>
+        </li>
+      </ul>
+
+  <div class="btn-group">
+    <a href="all_recipes.html" class="btn btn-primary text-white">RECIPES</a>
+    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+        <li class="nav-item">
+          <a class="dropdown-item" href="seasonal_recipes/spring.html">Spring</a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" href="seasonal_recipes/summer.html">Summer</a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" href="seasonal_recipes/autumn.html">Autumn</a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" href="seasonal_recipes/winter.html">Winter</a>
+        </li>
+        </ul>
+  </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="theme-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Dark Mode
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><button class="dropdown-item" onclick="setTheme('dark')">Dark Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('light')">Light Mode</button></li>
+          <li><button class="dropdown-item" onclick="setTheme('seizure')">Seizure Mode</button></li>
+        </ul>
+      </div>
+  </div>
+</nav>
+
+<!-- DESKTOP RECIPE CONTENT -->
+<div class="container py-4 desk-only">
+  <a class="btn btn-secondary" href="index.html">Back to Home</a>
+
+  <button type="button" class="btn btn-secondary" id="favoriteBtn">Favorite</button>
+  <button type="button" class="btn btn-secondary" onclick="copyLink()">Copy Link</button>
+  <button type="button" class="btn btn-secondary" onclick="shareOnTwitter()">Share on X</button>
+  <button type="button" class="btn btn-secondary" onclick="shareOnFacebook()">Share on Facebook</button>
+
+  <h1 id="recipe-title" class="text-center fw-bold my-4"></h1>
+
+  <div class="boxes-grid">
+    <div class="textbox" id="box-story">
+      <h3>Recipe Story</h3>
+      <div id="storytext"></div>
+    </div>
+    <div class="textbox" id="box-images">
+      <h3>Images</h3>
+      <div id="images-content" class="d-flex gap-2 flex-wrap justify-content-center"></div>
+    </div>
+    <div class="textbox" id="box-details">
+      <h3>Recipe Information</h3>
+      <div id="details-content"></div>
+    </div>
+    <div class="textbox" id="box-ingredients">
+      <h3>Ingredients</h3>
+      <ul id="ingredients-content"></ul>
+    </div>
+    <div class="textbox" id="box-steps">
+      <h3>Steps</h3>
+      <ol id="steps-content"></ol>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE RECIPE LAYOUT -->
+<div class="mob-only" id="mob-recipe-layout">
+
+  <!-- Hero image -->
+  <div class="mob-hero-wrapper" id="mob-hero-wrapper">
+    <img id="mob-hero-img" src="" alt="Recipe image">
+    <div class="mob-hero-overlay">
+      <div class="mob-hero-recipe-badge">CLASSIFIED RECIPE</div>
+      <h1 class="mob-hero-recipe-title" id="mob-hero-title"></h1>
+    </div>
+  </div>
+
+  <!-- Favorite / share bar -->
+  <div class="mob-fav-bar">
+    <button class="mob-fav-btn" id="mob-fav-btn">&#9825; FAVORITE</button>
+    <button class="mob-fav-btn" onclick="copyLink()" style="flex:0 0 auto;padding:10px 14px;">&#128279;</button>
+  </div>
+
+  <!-- Archive Note -->
+  <div class="mob-archive-note" id="mob-archive-note">
+    <div class="mob-section-header">
+      <div class="mob-section-header-line"></div>
+      <span class="mob-section-header-text">THE ARCHIVE NOTE</span>
+      <div class="mob-section-header-line"></div>
+    </div>
+    <p class="mob-story-text" id="mob-story-text">Loading field notes...</p>
+  </div>
+
+  <!-- Stat tiles -->
+  <div class="mob-stat-tiles" id="mob-stat-tiles"></div>
+
+  <!-- Ingredients -->
+  <div class="mob-ingredients-block" id="mob-ingredients-block">
+    <div class="mob-ingredients-title">Ingredients</div>
+    <ul class="mob-ingredients-list" id="mob-ingredients-list"></ul>
+  </div>
+
+  <!-- Field Instructions -->
+  <div class="mob-steps-section" id="mob-steps-section">
+    <div class="mob-steps-heading">&#128214;&nbsp; FIELD INSTRUCTIONS</div>
+    <div id="mob-steps-list"></div>
+  </div>
+
+  <!-- Security Note -->
+  <div class="mob-security-note" id="mob-security-note">
+    <div class="mob-security-note-heading">&#128274; SECURITY NOTE</div>
+    <p class="mob-security-note-text" id="mob-security-note-text"></p>
+  </div>
+
+</div>
+
+<!-- DESKTOP FOOTER -->
+<footer class="d-flex justify-content-center align-items-center py-2 header-bar desk-only">
+    <a href="https://github.com/Nintenmike3dsx/webdev/tree/clientFinal" class="btn btn-outline-light btn-sm" style="color: white;" target="_blank">Visit Github</a>
+</footer>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mob-bottom-nav mob-only">
+  <a href="index.html" class="mob-nav-tab active">
+    <span class="mob-nav-icon">&#127968;</span>
+    HOME
+  </a>
+  <a href="all_recipes.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#128193;</span>
+    ARCHIVE
+  </a>
+  <a href="favorites.html" class="mob-nav-tab">
+    <span class="mob-nav-icon">&#128100;</span>
+    PROFILE
+  </a>
+</nav>
+
+<script>
+  /* ---- Sharing helpers ---- */
+  function shareOnTwitter() {
+    const url  = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent('Check out this recipe I found!');
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+  }
+
+  function shareOnFacebook() {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+  }
+
+  async function copyLink() {
+    await navigator.clipboard.writeText(window.location.href);
+    showFavoriteToast('Link copied!');
+  }
+
+  /* ---- Mobile helpers ---- */
+  function isMobileViewport() { return window.innerWidth <= 767; }
+
+  function getSeasonIcon(season) {
+    const map = { Winter: '&#10052;', Summer: '&#9728;', Spring: '&#127807;', Autumn: '&#127810;', All: '&#127774;' };
+    return map[season] || '&#127757;';
+  }
+
+  function parseStepHeading(step) {
+    const words = step.split(' ');
+    const headWords = words.slice(0, Math.min(4, words.length));
+    const heading = headWords.join(' ').replace(/[,.]$/, '').toUpperCase();
+    const body = words.length > 4 ? words.slice(4).join(' ') : step;
+    return { heading, body };
+  }
+
+  function generateSecurityNote(recipe) {
+    const pool = [
+      `Recipe #${recipe.id} is classified under Operation ${recipe.season || recipe.category}. Dietary clearance: ${recipe.dietary && recipe.dietary.length ? recipe.dietary.join(', ') : 'Standard issue'}. Distribute to authorized personnel only.`,
+      `Prep time of ${recipe.prep_time} has been field-confirmed. ${recipe.difficulty} difficulty rating. All ${recipe.ingredients ? recipe.ingredients.length : '?'} components must be sourced through approved channels.`,
+      `This ${recipe.cuisine || 'field'} operation has been validated. Do not duplicate without authorisation. Keep preparation area sterile and dispose of all remnants per protocol.`
+    ];
+    return pool[recipe.id % pool.length];
+  }
+
+  /* ---- Populate mobile recipe layout ---- */
+  function populateMobile(recipe) {
+    const heroImg = document.getElementById('mob-hero-img');
+    if (heroImg) heroImg.src = `dataset/images/${recipe.images[0]}`;
+
+    const heroTitle = document.getElementById('mob-hero-title');
+    if (heroTitle) heroTitle.textContent = recipe.name;
+
+    /* Stat tiles */
+    const tilesEl = document.getElementById('mob-stat-tiles');
+    if (tilesEl) {
+      const tiles = [
+        { icon: getSeasonIcon(recipe.season), label: 'CATEGORY',   value: recipe.season || recipe.category, accent: false },
+        { icon: '&#127757;',                  label: 'CUISINE',    value: recipe.cuisine,                   accent: false },
+        { icon: '&#128202;',                  label: 'DIFFICULTY', value: recipe.difficulty,                accent: false },
+        { icon: '&#9200;',                    label: 'PREP TIME',  value: recipe.prep_time,                 accent: true  },
+      ];
+      tilesEl.innerHTML = tiles.map(t => `
+        <div class="mob-stat-tile${t.accent ? ' accent' : ''}">
+          <span class="mob-stat-icon">${t.icon}</span>
+          <span class="mob-stat-label">${t.label}</span>
+          <span class="mob-stat-value">${t.value || 'N/A'}</span>
+        </div>`).join('');
+    }
+
+    /* Ingredients */
+    const ingEl = document.getElementById('mob-ingredients-list');
+    if (ingEl && recipe.ingredients) {
+      ingEl.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join('');
+    }
+
+    /* Steps */
+    const stepsEl = document.getElementById('mob-steps-list');
+    if (stepsEl && recipe.steps) {
+      stepsEl.innerHTML = recipe.steps.map((step, idx) => {
+        const { heading, body } = parseStepHeading(step);
+        return `
+          <div class="mob-step">
+            <div class="mob-step-badge">${idx + 1}</div>
+            <div class="mob-step-body">
+              <div class="mob-step-heading">${heading}</div>
+              <div class="mob-step-text">${body}</div>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    /* Security note */
+    const secEl = document.getElementById('mob-security-note-text');
+    if (secEl) secEl.textContent = generateSecurityNote(recipe);
+
+    /* Mobile favorite button */
+    const mobFavBtn = document.getElementById('mob-fav-btn');
+    if (mobFavBtn) {
+      if (isFavorite(recipe.id)) {
+        mobFavBtn.textContent = '✓ FAVORITED';
+        mobFavBtn.classList.add('favorited');
+      }
+      mobFavBtn.addEventListener('click', () => {
+        const added = addToFavorites(recipe);
+        if (added) {
+          mobFavBtn.textContent = '✓ FAVORITED';
+          mobFavBtn.classList.add('favorited');
+          showFavoriteToast(`${recipe.name} added to favorites`);
+        }
+      });
+    }
+  }
+
+  /* ---- Main render function (desktop + mobile) ---- */
+  function renderRecipe(recipe) {
+    /* Desktop */
+    document.getElementById('recipe-title').textContent = recipe.name;
+    document.getElementById('images-content').innerHTML =
+      recipe.images.map(img => `<img src="dataset/images/${img}" class="recipe-img">`).join('');
+    document.getElementById('details-content').innerHTML = `
+      <p><b>Category:</b> ${recipe.category}</p>
+      <p><b>Cuisine:</b> ${recipe.cuisine}</p>
+      <p><b>Season:</b> ${recipe.season}</p>
+      <p><b>Difficulty:</b> ${recipe.difficulty}</p>
+      <p><b>Prep Time:</b> ${recipe.prep_time}</p>
+      <p><b>Dietary:</b> ${recipe.dietary ? recipe.dietary.join(', ') : 'N/A'}</p>`;
+    document.getElementById('ingredients-content').innerHTML =
+      recipe.ingredients.map(i => `<li>${i}</li>`).join('');
+    document.getElementById('steps-content').innerHTML =
+      recipe.steps.map(s => `<li>${s}</li>`).join('');
+
+    /* Mobile */
+    populateMobile(recipe);
+
+    /* Story (async — populates both) */
+    fetch('dataset/recipes/All_recipe_stories.json')
+      .then(res => res.json())
+      .then(stories => {
+        const story = stories.find(s => s.id === recipe.id);
+        const text  = story ? story.story : 'No field notes available for this classified recipe.';
+        const dtEl  = document.getElementById('storytext');
+        if (dtEl) dtEl.textContent = text;
+        const mobEl = document.getElementById('mob-story-text');
+        if (mobEl) mobEl.textContent = text;
+      });
+
+    setupFavoriteButton(recipe);
+  }
+
+  /* ---- Load recipe by URL param ---- */
+  const urlId = new URLSearchParams(window.location.search).get('id');
+  if (urlId) {
+    (async () => {
+      const recipes = await fetch('dataset/recipes/all_recipes.json').then(r => r.json());
+      const recipe  = recipes.find(r => r.id == urlId);
+      if (recipe) {
+        localStorage.setItem('selectedRecipe', JSON.stringify(recipe));
+        renderRecipe(recipe);
+      }
+    })();
+  }
+</script>
+
+<script>
+  /* ---- Favorite toast + button (desktop) ---- */
+  const favBtn = document.getElementById('favoriteBtn');
+
+  function showFavoriteToast(message) {
+    const toastEl   = document.getElementById('favoriteToast');
+    const toastBody = document.getElementById('favoriteToastBody');
+    if (!toastEl) return;
+    toastBody.textContent = message;
+    const toast = bootstrap.Toast.getOrCreateInstance(toastEl, { autohide: true, delay: 2500 });
+    toast.show();
+  }
+
+  function setupFavoriteButton(recipe) {
+    if (!favBtn) return;
+
+    function setFavorited() {
+      favBtn.textContent = 'Favorited';
+      favBtn.classList.remove('btn-secondary');
+      favBtn.classList.add('btn-success');
+      favBtn.disabled = true;
+    }
+
+    if (isFavorite(recipe.id)) setFavorited();
+
+    favBtn.addEventListener('click', () => {
+      const added = addToFavorites(recipe);
+      if (added) {
+        setFavorited();
+        showFavoriteToast(`${recipe.name} added to favorites`);
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
